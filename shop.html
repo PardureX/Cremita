@@ -16,17 +16,14 @@
    <link href="css/ekko-lightbox.css" rel="stylesheet">
 
    <style>
-      /* --- REDISEÑO TOTAL: DARK PREMIUM --- */
-      
       body.shop_page, .seccion_limpia_apolo {
           background-color: #0f0f0f !important;
           background-image: none !important;
           color: #ffffff !important;
       }
 
-      /* BANNER MEJORADO: Menos opacidad para el fondo y más protagonismo al Oro */
       .innerpage_banner {
-          background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('images/inner_banner.jpg') !important;
+          background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('images/inner_banner.jpg') !important;
           background-size: cover !important;
           background-position: center !important;
           padding: 110px 0 !important;
@@ -34,19 +31,47 @@
           border-bottom: 3px solid #C5A059 !important;
       }
 
-      /* Título con Efecto "Luz de Oro" */
       .page_title h2 span {
-          color: #C5A059 !important; /* El dorado base de Cremita */
-          font-size: 60px !important; 
+          color: #C5A059 !important;
+          font-size: 60px !important;
           font-weight: 800 !important;
           text-transform: uppercase;
           letter-spacing: 8px;
           background: none !important;
-          /* TRIPLE SOMBRA: Separación negra + Resplandor dorado + Brillo blanco metálico */
-          text-shadow: 
-              0px 4px 12px rgba(0, 0, 0, 0.9), 
-              0px 0px 25px rgba(255, 215, 0, 0.5), 
-              0px 0px 5px rgba(255, 255, 255, 0.8) !important;
+          text-shadow: 0px 4px 12px rgba(0,0,0,0.9), 0px 0px 25px rgba(255,215,0,0.5), 0px 0px 5px rgba(255,255,255,0.8) !important;
+      }
+
+      /* BANNER DE CONFIANZA */
+      .banner_confianza {
+          background: linear-gradient(135deg, #1a1400, #2a1f00, #1a1400);
+          border-top: 2px solid #C5A059;
+          border-bottom: 2px solid #C5A059;
+          padding: 20px 0;
+      }
+      .banner_confianza .item_confianza {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          color: #fff;
+          font-size: 13px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          padding: 8px 0;
+      }
+      .banner_confianza .item_confianza i {
+          color: #C5A059;
+          font-size: 20px;
+      }
+      .banner_confianza .separador {
+          color: #C5A059;
+          font-size: 20px;
+          display: flex;
+          align-items: center;
+      }
+      @media (max-width: 768px) {
+          .banner_confianza .separador { display: none; }
       }
 
       .product_blog {
@@ -59,22 +84,28 @@
           text-align: center;
           height: 100%;
       }
-
       .product_blog:hover {
           transform: translateY(-10px);
           border-color: #C5A059 !important;
-          box-shadow: 0 12px 30px rgba(197, 160, 89, 0.2) !important;
+          box-shadow: 0 12px 30px rgba(197,160,89,0.2) !important;
       }
-
       .product_blog img {
           border-radius: 12px;
           margin-bottom: 15px;
           max-width: 100%;
+          cursor: pointer;
       }
-
       .product_blog h3 {
           color: #ffffff !important;
           font-size: 1.1rem;
+          cursor: pointer;
+          transition: color 0.3s;
+          text-decoration: underline;
+          text-decoration-color: #C5A059;
+          text-underline-offset: 4px;
+      }
+      .product_blog h3:hover {
+          color: #C5A059 !important;
       }
 
       .precio_tag {
@@ -93,16 +124,138 @@
           line-height: 1.6;
       }
 
-      .header_bottom_section {
-          background: #000 !important;
+      .header_bottom_section { background: #000 !important; }
+
+      .btn_comprar_ws {
+          display: block;
+          background-color: #25D366;
+          color: white !important;
+          text-align: center;
+          padding: 12px;
+          margin: 15px 10px 5px 10px;
+          border-radius: 8px;
+          font-weight: bold;
+          text-decoration: none;
+          font-size: 13px;
+          transition: 0.3s ease;
+      }
+      .btn_comprar_ws:hover {
+          background-color: #128C7E;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       }
 
-      /* BOTONES DE REDES */
+      /* FOOTER MEJORADO */
+      .footer_cremita {
+          background: #0a0a0a;
+          border-top: 2px solid #C5A059;
+          padding: 60px 0 30px;
+      }
+      .footer_col_title {
+          color: #C5A059;
+          font-weight: 800;
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 20px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #2a2a2a;
+      }
+      .footer_lista {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+      }
+      .footer_lista li {
+          color: #bbb;
+          font-size: 13px;
+          line-height: 2;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+      }
+      .footer_lista li i {
+          color: #C5A059;
+          width: 16px;
+      }
+
+      /* MÉTODOS DE PAGO */
+      .pago_badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          background: #1a1a1a;
+          border: 1px solid #333;
+          border-radius: 8px;
+          padding: 8px 14px;
+          margin: 4px;
+          color: #fff;
+          font-size: 12px;
+          font-weight: 600;
+          transition: border-color 0.3s;
+      }
+      .pago_badge:hover { border-color: #C5A059; }
+      .pago_badge i { color: #C5A059; font-size: 16px; }
+
+      .cpy_cremita {
+          background: #050505;
+          border-top: 1px solid #1a1a1a;
+          padding: 15px 0;
+          text-align: center;
+          color: #555;
+          font-size: 12px;
+      }
+
+      /* MODAL CARACTERÍSTICAS */
+      .modal-cremita .modal-content {
+          background: #1a1a1a;
+          border: 1px solid #C5A059;
+          border-radius: 16px;
+          color: #fff;
+      }
+      .modal-cremita .modal-header {
+          border-bottom: 1px solid #2a2a2a;
+          padding: 20px 25px;
+      }
+      .modal-cremita .modal-title {
+          color: #C5A059;
+          font-weight: 800;
+          font-size: 1.3rem;
+      }
+      .modal-cremita .btn-close {
+          filter: invert(1);
+      }
+      .modal-cremita .modal-body {
+          padding: 25px;
+      }
+      .caract_item {
+          display: flex;
+          align-items: flex-start;
+          gap: 14px;
+          padding: 14px 0;
+          border-bottom: 1px solid #2a2a2a;
+      }
+      .caract_item:last-child { border-bottom: none; }
+      .caract_icon {
+          width: 40px;
+          height: 40px;
+          background: #C5A059;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+      }
+      .caract_icon i { color: #000; font-size: 16px; }
+      .caract_texto h5 { color: #C5A059; font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+      .caract_texto p { color: #bbb; font-size: 13px; margin: 0; line-height: 1.5; }
+
+      /* REDES FLOTANTES */
       .redes-cremita-container { display: flex; flex-direction: column; gap: 15px; align-items: center; padding: 10px; }
       .btn-redes { width: 55px; height: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none !important; position: relative; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); background: #1a1a1a; border: 1px solid #C5A059; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
       .btn-redes i, .btn-redes svg { font-size: 26px; width: 24px; fill: #C5A059; color: #C5A059; transition: all 0.3s ease; }
       .btn-redes.wa:hover { background: #25D366; border-color: #25D366; transform: rotate(360deg) scale(1.1); }
-      .btn-redes.tt:hover { background: #000000; border-color: #fff; transform: scale(1.1) translateY(-5px); }
+      .btn-redes.tt:hover { background: #000; border-color: #fff; transform: scale(1.1) translateY(-5px); }
       .btn-redes.ig:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); border-color: transparent; transform: scale(1.1) rotate(-10deg); }
       .btn-redes:hover i, .btn-redes:hover svg { color: white; fill: white; }
       .tooltip-redes { position: absolute; right: 70px; background: #C5A059; color: black; padding: 5px 12px; border-radius: 5px; font-size: 12px; font-weight: bold; opacity: 0; visibility: hidden; transition: all 0.3s ease; white-space: nowrap; }
@@ -115,6 +268,7 @@
       <img class="preloader" src="images/logo.png" alt="#">
    </div>
 
+   <!-- HEADER -->
    <header class="header">
       <div class="header_top_section">
          <div class="container">
@@ -127,13 +281,14 @@
             </div>
          </div>
       </div>
-
       <div class="header_bottom_section">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
                   <nav class="navbar navbar-expand-md navbar-dark">
-                     <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#cloapediamenu">
+                     <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#cloapediamenu"
+                        aria-controls="cloapediamenu" aria-expanded="false" aria-label="Toggle navigation"
+                        style="border-color: #C5A059; padding: 8px 12px;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#C5A059" viewBox="0 0 16 16">
                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                         </svg>
@@ -151,6 +306,7 @@
       </div>
    </header>
 
+   <!-- BANNER TÍTULO -->
    <section class="innerpage_banner">
       <div class="container">
          <div class="row">
@@ -163,270 +319,384 @@
       </div>
    </section>
 
-   <section class="seccion_limpia_apolo">
+   <!-- BANNER DE CONFIANZA -->
+   <div class="banner_confianza">
+      <div class="container">
+         <div class="row align-items-center justify-content-center text-center">
+            <div class="col-6 col-md-auto">
+               <div class="item_confianza">
+                  <i class="fa fa-truck"></i>
+                  <span>Envío a todo Colombia</span>
+               </div>
+            </div>
+            <div class="col-auto d-none d-md-flex separador">✦</div>
+            <div class="col-6 col-md-auto">
+               <div class="item_confianza">
+                  <i class="fa fa-money"></i>
+                  <span>Pago contra entrega</span>
+               </div>
+            </div>
+            <div class="col-auto d-none d-md-flex separador">✦</div>
+            <div class="col-6 col-md-auto">
+               <div class="item_confianza">
+                  <i class="fa fa-shield"></i>
+                  <span>Garantía 1 año</span>
+               </div>
+            </div>
+            <div class="col-auto d-none d-md-flex separador">✦</div>
+            <div class="col-6 col-md-auto">
+               <div class="item_confianza">
+                  <i class="fa fa-lock"></i>
+                  <span>Compra 100% segura</span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- INTRO -->
+   <section class="seccion_limpia_apolo" style="padding: 40px 0 10px;">
       <div class="container">
          <div class="row">
             <div class="col-lg-12">
-               <p class="intro_texto_catalogo">Descubre nuestra exclusiva colección de joyería en Oro Laminado 18K y proximamente  Plata ley 925. Calidad garantizada en cada pieza.</p>
+               <p class="intro_texto_catalogo">Descubre nuestra exclusiva colección de joyería en Oro Laminado 18K y próximamente Plata Ley 925. Calidad garantizada en cada pieza. <span style="color:#C5A059; cursor:pointer;" data-bs-toggle="modal" data-bs-target="#modalCaracteristicas">🔎 Toca el nombre de cualquier producto para ver sus características.</span></p>
             </div>
          </div>
       </div>
    </section>
 
-   <section class="seccion_limpia_apolo" style="padding-top: 0 !important;">
-    <div class="container">
-   <div class="row">
-      <div class="col-md-12 text-center mt-5">
-         <h2 style="color: #C5A059; font-weight: 800; text-transform: uppercase; border-bottom: 2px solid #333; display: inline-block; padding-bottom: 10px;">Cadenas Oro Laminado 18K</h2>
-      </div>
-   </div>
-   <div class="row product_section">
-      <div class="col-md-4">
-         <div class="product_blog margin_top_30">
-            <a href="images/cadena1.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Longitud de 60cm, incluye dije mediano de San Benito. Oro Laminado 18k.">
-               <img src="images/cadena1.jpg" alt="Cremita Joyas" />
-            </a>
-            <h3>Cadena San Benito</h3>
-            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$370.000</span>
-            <span class="precio_tag">$340.000</span>
-            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
-               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
-            </a>
-         </div>
-      </div>
-      <div class="col-md-4">
-         <div class="product_blog margin_top_30">
-            <a href="images/cadena2.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Tejido Luna delicado, 45cm de largo. Oro Laminado 18k.">
-               <img src="images/cadena2.jpg" alt="Cremita Joyas" />
-            </a>
-            <h3>Cadena Luna</h3>
-            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$130.000</span>
-            <span class="precio_tag">$120.000</span>
-            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
-               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
-            </a>
-         </div>
-      </div>
-      <div class="col-md-4">
-         <div class="product_blog margin_top_30">
-            <a href="images/cadena3.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Dije Virgencita Milagrosa, 50cm de largo. Oro Laminado 18k.">
-               <img src="images/cadena3.jpg" alt="Cremita Joyas" />
-            </a>
-            <h3>Cadena Virgencita Milagrosa</h3>
-            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$160.000</span>
-            <span class="precio_tag">$120.000</span>
-            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
-               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
-            </a>
-         </div>
-      </div>
-   </div>
-
-   <div class="row">
-      <div class="col-md-12 text-center mt-5">
-         <h2 style="color: #C5A059; font-weight: 800; text-transform: uppercase; border-bottom: 2px solid #333; display: inline-block; padding-bottom: 10px;">Topitos Oro Laminado 18K</h2>
-      </div>
-   </div>
-   <div class="row product_section">
-      <div class="col-md-4">
-         <div class="product_blog margin_top_30">
-            <a href="images/topo1.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Diseño Cruz, sistema de rosca de seguridad. Oro Laminado 18k.">
-               <img src="images/topo1.jpg" alt="Cremita Joyas" />
-            </a>
-            <h3>Topito Cruz</h3>
-            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$75.000</span>
-            <span class="precio_tag">$50.000</span>
-            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
-               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
-            </a>
-         </div>
-      </div>
-      <div class="col-md-4">
-         <div class="product_blog margin_top_30">
-            <a href="images/topo2.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Virgen Milagrosa detallada, Oro Laminado 18k.">
-               <img src="images/topo2.jpg" alt="Cremita Joyas" />
-            </a>
-            <h3>Topitos Virgen Milagrosa</h3>
-            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$110.000</span>
-            <span class="precio_tag">$100.000</span>
-            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
-               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
-            </a>
-         </div>
-      </div>
-      <div class="col-md-4">
-         <div class="product_blog margin_top_30">
-            <a href="images/topo3.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Estilo Rolex clásico, Oro Laminado 18k.">
-               <img src="images/topo3.jpg" alt="Cremita Joyas" />
-            </a>
-            <h3>Topitos Rolex</h3>
-            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$110.000</span>
-            <span class="precio_tag">$100.000</span>
-            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
-               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
-            </a>
-         </div>
-      </div>
-      <div class="col-md-4">
-         <div class="product_blog margin_top_30">
-            <a href="images/topo4.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Variante Rolex, acabado premium. Oro Laminado 18k.">
-               <img src="images/topo4.jpg" alt="Cremita Joyas" />
-            </a>
-            <h3>Topitos Rolex (Variante)</h3>
-            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$110.000</span>
-            <span class="precio_tag">$100.000</span>
-            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
-               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
-            </a>
-         </div>
-      </div>
-      <div class="col-md-4">
-         <div class="product_blog margin_top_30">
-            <a href="images/topo5.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Bolita lisa 6mm, Oro Laminado 18k.">
-               <img src="images/topo5.jpg" alt="Cremita Joyas" />
-            </a>
-            <h3>Topitos Bolita</h3>
-            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$110.000</span>
-            <span class="precio_tag">$100.000</span>
-            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
-               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
-            </a>
-         </div>
-      </div>
-      <div class="col-md-4">
-         <div class="product_blog margin_top_30">
-            <a href="images/topo6.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Bolitas 3mm, perfectas para niñas o segundo agujero. Oro Laminado 18k.">
-               <img src="images/topo6.jpg" alt="Cremita Joyas" />
-            </a>
-            <h3>Topitos Bolita Pequeños</h3>
-            <span class="precio_tag">$90.000</span>
-            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
-               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
-            </a>
-         </div>
-      </div>
-   </div>
-
-   <div class="row">
-      <div class="col-md-12 text-center mt-5">
-         <h2 style="color: #C5A059; font-weight: 800; text-transform: uppercase; border-bottom: 2px solid #333; display: inline-block; padding-bottom: 10px;">Pulseras Oro Laminado 18K</h2>
-      </div>
-   </div>
-   <div class="row product_section">
-      <div class="col-md-4">
-         <div class="product_blog margin_top_30">
-            <a href="images/pulsera1.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Tejido tipo Gucci, resistente y elegante. Oro Laminado 18k.">
-               <img src="images/pulsera1.jpg" alt="Cremita Joyas" />
-            </a>
-            <h3>Pulsera Gucci</h3>
-            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$220.000</span>
-            <span class="precio_tag">$190.000</span>
-            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
-               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
-            </a>
-         </div>
-      </div>
-      <div class="col-md-4">
-         <div class="product_blog margin_top_30">
-            <a href="images/pulsera2.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Tejido Cartier Figaro 3x1, Oro Laminado 18k.">
-               <img src="images/pulsera2.jpg" alt="Cremita Joyas" />
-            </a>
-            <h3>Pulsera Cartier Figaro</h3>
-            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$220.000</span>
-            <span class="precio_tag">$190.000</span>
-            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
-               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
-            </a>
-         </div>
-      </div>
-      <div class="col-md-4">
-         <div class="product_blog margin_top_30">
-            <a href="images/pulsera3.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Tejido Chino tradicional, alta durabilidad. Oro Laminado 18k.">
-               <img src="images/pulsera3.jpg" alt="Cremita Joyas" />
-            </a>
-            <h3>Pulsera Tejido Chino</h3>
-            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$165.000</span>
-            <span class="precio_tag">$130.000</span>
-            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
-               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
-            </a>
-         </div>
-      </div>
-   </div>
-</div>
-
-<style>
-/* Estilo del botón para que no mueva tus cajas alineadas */
-.btn_comprar_ws {
-    display: block;
-    background-color: #25D366;
-    color: white !important;
-    text-align: center;
-    padding: 12px;
-    margin: 15px 10px 5px 10px;
-    border-radius: 8px;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 13px;
-    transition: 0.3s ease;
-}
-.btn_comprar_ws:hover {
-    background-color: #128C7E;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-</style>
-   </section>
-
-   <footer class="footer layout_padding">
+   <!-- CATÁLOGO -->
+   <section class="seccion_limpia_apolo" style="padding-top: 10px;">
       <div class="container">
-         <div class="row" style="display: flex; align-items: flex-start; flex-wrap: wrap;">
-            <div class="col-md-3" style="margin-bottom: 20px;">
-               <div class="info_logo">
-                  <a href="index.html"><img src="images/logo.png" alt="" style="max-width: 150px;"></a>
+
+         <!-- CADENAS -->
+         <div class="row">
+            <div class="col-md-12 text-center mt-5">
+               <h2 style="color:#C5A059; font-weight:800; text-transform:uppercase; border-bottom:2px solid #333; display:inline-block; padding-bottom:10px;">Cadenas Oro Laminado 18K</h2>
+            </div>
+         </div>
+         <div class="row product_section">
+            <div class="col-md-4 mt-4">
+               <div class="product_blog">
+                  <img src="images/cadena1.jpg" alt="Cadena San Benito" />
+                  <h3 onclick="abrirModal('Cadena San Benito', 'cadena')">Cadena San Benito</h3>
+                  <span style="color:#888; text-decoration:line-through; font-size:0.9rem;">$370.000</span>
+                  <span class="precio_tag">$340.000</span>
+                  <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws"><i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP</a>
                </div>
             </div>
-            <div class="col-md-3" style="margin-bottom: 20px;">
-               <h4 style="color: #C5A059; margin-bottom: 15px;">Nuestra Calidad</h4>
-               <ul style="list-style: none; padding: 0; color: #fff; font-size: 13px; line-height: 1.8;">
-                  <li><i class="fa fa-star" style="color: #C5A059;"></i> Oro Laminado 18K</li>
-                  <li><i class="fa fa-shield" style="color: #C5A059;"></i> Garantía de 1 año</li>
-                  <li><i class="fa fa-tint" style="color: #C5A059;"></i> Resistente al agua</li>
-               </ul>
+            <div class="col-md-4 mt-4">
+               <div class="product_blog">
+                  <img src="images/cadena2.jpg" alt="Cadena Luna" />
+                  <h3 onclick="abrirModal('Cadena Luna', 'cadena')">Cadena Luna</h3>
+                  <span style="color:#888; text-decoration:line-through; font-size:0.9rem;">$130.000</span>
+                  <span class="precio_tag">$120.000</span>
+                  <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws"><i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP</a>
+               </div>
             </div>
-            <div class="col-md-3" style="margin-bottom: 20px;">
-               <h4 style="color: #C5A059; margin-bottom: 15px;">Ubicación</h4>
-               <p style="color: #fff; font-size: 13px;"><i class="fa fa-map-marker" style="color: #C5A059;"></i> Palmira, Valle del Cauca</p>
+            <div class="col-md-4 mt-4">
+               <div class="product_blog">
+                  <img src="images/cadena3.jpg" alt="Cadena Virgencita" />
+                  <h3 onclick="abrirModal('Cadena Virgencita Milagrosa', 'cadena')">Cadena Virgencita Milagrosa</h3>
+                  <span style="color:#888; text-decoration:line-through; font-size:0.9rem;">$160.000</span>
+                  <span class="precio_tag">$120.000</span>
+                  <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws"><i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP</a>
+               </div>
             </div>
-            <div class="col-md-3" style="margin-bottom: 20px;">
-               <h4 style="color: #C5A059; margin-bottom: 15px;">Compra Directa</h4>
-               <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" style="background-color: #C5A059; color: #000; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 12px; display: block; text-align: center;">
-                  <i class="fa fa-whatsapp"></i> ASESORÍA Y PEDIDOS
+         </div>
+
+         <!-- TOPITOS -->
+         <div class="row">
+            <div class="col-md-12 text-center mt-5">
+               <h2 style="color:#C5A059; font-weight:800; text-transform:uppercase; border-bottom:2px solid #333; display:inline-block; padding-bottom:10px;">Topitos Oro Laminado 18K</h2>
+            </div>
+         </div>
+         <div class="row product_section">
+            <div class="col-md-4 mt-4">
+               <div class="product_blog">
+                  <img src="images/topo1.jpg" alt="Topito Cruz" />
+                  <h3 onclick="abrirModal('Topito Cruz', 'topito')">Topito Cruz</h3>
+                  <span style="color:#888; text-decoration:line-through; font-size:0.9rem;">$75.000</span>
+                  <span class="precio_tag">$50.000</span>
+                  <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws"><i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP</a>
+               </div>
+            </div>
+            <div class="col-md-4 mt-4">
+               <div class="product_blog">
+                  <img src="images/topo2.jpg" alt="Topitos Virgen Milagrosa" />
+                  <h3 onclick="abrirModal('Topitos Virgen Milagrosa', 'topito')">Topitos Virgen Milagrosa</h3>
+                  <span style="color:#888; text-decoration:line-through; font-size:0.9rem;">$110.000</span>
+                  <span class="precio_tag">$100.000</span>
+                  <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws"><i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP</a>
+               </div>
+            </div>
+            <div class="col-md-4 mt-4">
+               <div class="product_blog">
+                  <img src="images/topo3.jpg" alt="Topitos Rolex" />
+                  <h3 onclick="abrirModal('Topitos Rolex', 'topito')">Topitos Rolex</h3>
+                  <span style="color:#888; text-decoration:line-through; font-size:0.9rem;">$110.000</span>
+                  <span class="precio_tag">$100.000</span>
+                  <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws"><i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP</a>
+               </div>
+            </div>
+            <div class="col-md-4 mt-4">
+               <div class="product_blog">
+                  <img src="images/topo4.jpg" alt="Topitos Rolex Variante" />
+                  <h3 onclick="abrirModal('Topitos Rolex (Variante)', 'topito')">Topitos Rolex (Variante)</h3>
+                  <span style="color:#888; text-decoration:line-through; font-size:0.9rem;">$110.000</span>
+                  <span class="precio_tag">$100.000</span>
+                  <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws"><i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP</a>
+               </div>
+            </div>
+            <div class="col-md-4 mt-4">
+               <div class="product_blog">
+                  <img src="images/topo5.jpg" alt="Topitos Bolita" />
+                  <h3 onclick="abrirModal('Topitos Bolita', 'topito')">Topitos Bolita</h3>
+                  <span style="color:#888; text-decoration:line-through; font-size:0.9rem;">$110.000</span>
+                  <span class="precio_tag">$100.000</span>
+                  <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws"><i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP</a>
+               </div>
+            </div>
+            <div class="col-md-4 mt-4">
+               <div class="product_blog">
+                  <img src="images/topo6.jpg" alt="Topitos Bolita Pequeños" />
+                  <h3 onclick="abrirModal('Topitos Bolita Pequeños', 'topito')">Topitos Bolita Pequeños</h3>
+                  <span class="precio_tag">$90.000</span>
+                  <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws"><i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP</a>
+               </div>
+            </div>
+         </div>
+
+         <!-- PULSERAS -->
+         <div class="row">
+            <div class="col-md-12 text-center mt-5">
+               <h2 style="color:#C5A059; font-weight:800; text-transform:uppercase; border-bottom:2px solid #333; display:inline-block; padding-bottom:10px;">Pulseras Oro Laminado 18K</h2>
+            </div>
+         </div>
+         <div class="row product_section">
+            <div class="col-md-4 mt-4">
+               <div class="product_blog">
+                  <img src="images/pulsera1.jpg" alt="Pulsera Gucci" />
+                  <h3 onclick="abrirModal('Pulsera Gucci', 'pulsera')">Pulsera Gucci</h3>
+                  <span style="color:#888; text-decoration:line-through; font-size:0.9rem;">$220.000</span>
+                  <span class="precio_tag">$190.000</span>
+                  <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws"><i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP</a>
+               </div>
+            </div>
+            <div class="col-md-4 mt-4">
+               <div class="product_blog">
+                  <img src="images/pulsera2.jpg" alt="Pulsera Cartier Figaro" />
+                  <h3 onclick="abrirModal('Pulsera Cartier Figaro', 'pulsera')">Pulsera Cartier Figaro</h3>
+                  <span style="color:#888; text-decoration:line-through; font-size:0.9rem;">$220.000</span>
+                  <span class="precio_tag">$190.000</span>
+                  <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws"><i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP</a>
+               </div>
+            </div>
+            <div class="col-md-4 mt-4">
+               <div class="product_blog">
+                  <img src="images/pulsera3.jpg" alt="Pulsera Tejido Chino" />
+                  <h3 onclick="abrirModal('Pulsera Tejido Chino', 'pulsera')">Pulsera Tejido Chino</h3>
+                  <span style="color:#888; text-decoration:line-through; font-size:0.9rem;">$165.000</span>
+                  <span class="precio_tag">$130.000</span>
+                  <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws"><i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP</a>
+               </div>
+            </div>
+         </div>
+
+      </div>
+   </section>
+
+   <!-- MODAL CARACTERÍSTICAS -->
+   <div class="modal fade modal-cremita" id="modalCaracteristicas" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="modalTitulo">Características del Producto</h5>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modalCuerpo">
+            </div>
+            <div class="modal-footer" style="border-top:1px solid #2a2a2a;">
+               <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws" style="margin:0; flex:1;">
+                  <i class="fa fa-whatsapp"></i> Consultar por WhatsApp
                </a>
             </div>
          </div>
       </div>
+   </div>
+
+   <!-- FOOTER -->
+   <footer class="footer_cremita">
+      <div class="container">
+         <div class="row">
+
+            <!-- Logo -->
+            <div class="col-md-3 col-sm-6 mb-4">
+               <a href="index.html"><img src="images/logo.png" alt="Cremita Joyería" style="max-width:140px; margin-bottom:15px;"></a>
+               <p style="color:#888; font-size:12px; line-height:1.7;">Joyería con alma. Cada pieza está hecha para brillar contigo, todos los días.</p>
+            </div>
+
+            <!-- Calidad y Garantía -->
+            <div class="col-md-3 col-sm-6 mb-4">
+               <p class="footer_col_title">✦ Nuestra Promesa</p>
+               <ul class="footer_lista">
+                  <li><i class="fa fa-star"></i> Oro Laminado 18K certificado</li>
+                  <li><i class="fa fa-shield"></i> Garantía 1 año por pérdida de color</li>
+                  <li><i class="fa fa-tint"></i> 100% resistente al agua</li>
+                  <li><i class="fa fa-heart"></i> Hipoalergénico — apto piel sensible</li>
+                  <li><i class="fa fa-sun-o"></i> No se oxida ni mancha la piel</li>
+                  <li><i class="fa fa-recycle"></i> Durabilidad superior al baño en oro</li>
+                  <li><i class="fa fa-gift"></i> Empaque especial incluido</li>
+               </ul>
+            </div>
+
+            <!-- Métodos de Pago -->
+            <div class="col-md-3 col-sm-6 mb-4">
+               <p class="footer_col_title">✦ Métodos de Pago</p>
+               <div style="display:flex; flex-wrap:wrap; gap:4px;">
+                  <span class="pago_badge"><i class="fa fa-mobile"></i> Nequi</span>
+                  <span class="pago_badge"><i class="fa fa-university"></i> Bancolombia</span>
+                  <span class="pago_badge"><i class="fa fa-money"></i> Efectivo</span>
+                  <span class="pago_badge"><i class="fa fa-truck"></i> Contra entrega</span>
+                  <span class="pago_badge"><i class="fa fa-whatsapp"></i> Daviplata</span>
+               </div>
+               <p style="color:#666; font-size:11px; margin-top:12px;">* Pago seguro y verificado en cada pedido.</p>
+            </div>
+
+            <!-- Contacto y Ubicación -->
+            <div class="col-md-3 col-sm-6 mb-4">
+               <p class="footer_col_title">✦ Encuéntranos</p>
+               <ul class="footer_lista">
+                  <li><i class="fa fa-map-marker"></i> Palmira, Valle del Cauca</li>
+                  <li><i class="fa fa-whatsapp"></i> Pedidos por WhatsApp</li>
+                  <li><i class="fa fa-instagram"></i> @cremitajoyas</li>
+                  <li><i class="fa fa-clock-o"></i> Lun – Sáb: 8am a 8pm</li>
+               </ul>
+               <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" style="display:block; margin-top:15px; background:#C5A059; color:#000; padding:10px; border-radius:8px; text-align:center; font-weight:800; font-size:12px; text-decoration:none;">
+                  <i class="fa fa-whatsapp"></i> PEDIR AHORA
+               </a>
+            </div>
+
+         </div>
+      </div>
    </footer>
 
-   <div class="cpy">
+   <div class="cpy_cremita">
       <div class="container">
-         <p>© 2026 Cremita Joyería - Todos los derechos reservados.</p>
+         <p style="margin:0;">© 2026 Cremita Joyería — Todos los derechos reservados. Hecho con ❤️ en Palmira, Colombia.</p>
       </div>
    </div>
 
-   <div style="position: fixed; bottom: 30px; right: 30px; z-index: 9999;">
+   <!-- REDES FLOTANTES -->
+   <div style="position:fixed; bottom:30px; right:30px; z-index:9999;">
       <div class="redes-cremita-container">
          <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn-redes wa"><i class="fa fa-whatsapp"></i><span class="tooltip-redes">WhatsApp</span></a>
-         <a href="https://www.tiktok.com/@cremitajoyas?_r=1&_t=ZS-95OpCUgqKSz" target="_blank" class="btn-redes tt"><svg viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.24 71.18V0h88a121.18 121.18 0 0 0 1.86 22.32c.35 22.69 11.5 43.59 29.6 57.73A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z"/></svg><span class="tooltip-redes">TikTok</span></a>
+         <a href="https://www.tiktok.com/@cremitajoyas?_r=1&_t=ZS-95OpCUgqKSz" target="_blank" class="btn-redes tt">
+            <svg viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.24 71.18V0h88a121.18 121.18 0 0 0 1.86 22.32c.35 22.69 11.5 43.59 29.6 57.73A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z"/></svg>
+            <span class="tooltip-redes">TikTok</span>
+         </a>
          <a href="https://www.instagram.com/cremitajoyas?igsh=a2hhZGE5em4wMnFu" target="_blank" class="btn-redes ig"><i class="fa fa-instagram"></i><span class="tooltip-redes">Instagram</span></a>
       </div>
    </div>
 
+   <!-- SCRIPTS -->
    <script src="js/jquery.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
    <script src="js/parallax.js"></script>
    <script src="js/animate.js"></script>
    <script src="js/ekko-lightbox.js"></script>
    <script src="js/custom.js"></script>
+
+   <script>
+   // Contenido del modal según tipo de producto
+   const caracteristicas = {
+      cadena: `
+         <div class="caract_item">
+            <div class="caract_icon"><i class="fa fa-certificate"></i></div>
+            <div class="caract_texto"><h5>Material</h5><p>Oro Laminado 18K de alta calidad — brillo duradero con apariencia de oro sólido.</p></div>
+         </div>
+         <div class="caract_item">
+            <div class="caract_icon"><i class="fa fa-shield"></i></div>
+            <div class="caract_texto"><h5>Garantía</h5><p>1 año de garantía por pérdida de color. Si pierde su brillo, lo reponemos.</p></div>
+         </div>
+         <div class="caract_item">
+            <div class="caract_icon"><i class="fa fa-tint"></i></div>
+            <div class="caract_texto"><h5>Resistente al agua</h5><p>Puedes ducharte, nadar y sudar sin problema. No se oxida ni se daña con la humedad.</p></div>
+         </div>
+         <div class="caract_item">
+            <div class="caract_icon"><i class="fa fa-heart"></i></div>
+            <div class="caract_texto"><h5>Hipoalergénico</h5><p>Apto para todo tipo de piel, incluyendo pieles sensibles. No genera reacciones alérgicas.</p></div>
+         </div>
+         <div class="caract_item">
+            <div class="caract_icon"><i class="fa fa-sun-o"></i></div>
+            <div class="caract_texto"><h5>No mancha la piel</h5><p>A diferencia de otros metales, nuestras cadenas no dejan marcas ni coloración en tu piel.</p></div>
+         </div>
+         <div class="caract_item">
+            <div class="caract_icon"><i class="fa fa-gift"></i></div>
+            <div class="caract_texto"><h5>Empaque especial</h5><p>Viene en empaque elegante, perfecto para regalo o para guardar y proteger tu joya.</p></div>
+         </div>
+      `,
+      topito: `
+         <div class="caract_item">
+            <div class="caract_icon"><i class="fa fa-certificate"></i></div>
+            <div class="caract_texto"><h5>Material</h5><p>Oro Laminado 18K — acabado premium con brillo y durabilidad excepcional.</p></div>
+         </div>
+         <div class="caract_item">
+            <div class="caract_icon"><i class="fa fa-lock"></i></div>
+            <div class="caract_texto"><h5>Cierre de seguridad</h5><p>Sistema de rosca o mariposa de seguridad para que nunca pierdas tus topitos.</p></div>
+         </div>
+         <div class="caract_item">
+            <div class="caract_icon"><i class="fa fa-shield"></i></div>
+            <div class="caract_texto"><h5>Garantía</h5><p>1 año de garantía por pérdida de color. Tu inversión está protegida.</p></div>
+         </div>
+         <div class="caract_item">
+            <div class="caract_icon"><i class="fa fa-heart"></i></div>
+            <div class="caract_texto"><h5>Hipoalergénico</h5><p>Seguros para usar a diario, incluso con perforaciones recientes o piel sensible.</p></div>
+         </div>
+         <div class="caract_item">
+            <div class="caract_icon"><i class="fa fa-tint"></i></div>
+            <div class="caract_texto"><h5>Resistente al agua</h5><p>Diseñados para acompañarte en todo momento sin perder su brillo dorado.</p></div>
+         </div>
+         <div class="caract_item">
+            <div class="caract_icon"><i class="fa fa-gift"></i></div>
+            <div class="caract_texto"><h5>Empaque especial</h5><p>Presentación elegante, ideal para regalar en cualquier ocasión especial.</p></div>
+         </div>
+      `,
+      pulsera: `
+         <div class="caract_item">
+            <div class="caract_icon"><i class="fa fa-certificate"></i></div>
+            <div class="caract_texto"><h5>Material</h5><p>Oro Laminado 18K con tejido artesanal — resistente, flexible y de apariencia lujosa.</p></div>
+         </div>
+         <div class="caract_item">
+            <div class="caract_icon"><i class="fa fa-shield"></i></div>
+            <div class="caract_texto"><h5>Garantía</h5><p>1 año de garantía por pérdida de color — porque tu confianza vale más que cualquier joya.</p></div>
+         </div>
+         <div class="caract_item">
+            <div class="caract_icon"><i class="fa fa-tint"></i></div>
+            <div class="caract_texto"><h5>Resistente al agua</h5><p>Puedes usarla todos los días sin quitártela. Aguanta ducha, sudor y actividad física.</p></div>
+         </div>
+         <div class="caract_item">
+            <div class="caract_icon"><i class="fa fa-heart"></i></div>
+            <div class="caract_texto"><h5>Hipoalergénico</h5><p>Cero irritación, cero manchas. Perfecta para quienes tienen piel delicada.</p></div>
+         </div>
+         <div class="caract_item">
+            <div class="caract_icon"><i class="fa fa-expand"></i></div>
+            <div class="caract_texto"><h5>Talla ajustable</h5><p>Cierre regulable que se adapta a cualquier muñeca con comodidad y estilo.</p></div>
+         </div>
+         <div class="caract_item">
+            <div class="caract_icon"><i class="fa fa-gift"></i></div>
+            <div class="caract_texto"><h5>Empaque especial</h5><p>Llega en caja elegante lista para regalar — porque cada momento merece brillar.</p></div>
+         </div>
+      `
+   };
+
+   function abrirModal(nombre, tipo) {
+      document.getElementById('modalTitulo').textContent = nombre;
+      document.getElementById('modalCuerpo').innerHTML = caracteristicas[tipo] || caracteristicas['cadena'];
+      var modal = new bootstrap.Modal(document.getElementById('modalCaracteristicas'));
+      modal.show();
+   }
+   </script>
+
 </body>
 </html>

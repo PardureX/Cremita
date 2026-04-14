@@ -4267,3 +4267,17 @@ form#commant_form div.field textarea.custom_field {
     z-index: 1;
 }
 
+/* ELIMINAR EL VERDE Y EL BLANCO DEL MENÚ - GOLPE DE APOLLO */
+.navbar, .header_section, .navbar-collapse {
+    background-color: #000000 !important; /* Negro absoluto */
+}
+
+/* Texto del menú en dorado */
+.nav-link {
+    color: #C5A059 !important; 
+}
+
+/* El botón de las tres rayitas en el celular */
+.navbar-toggler {
+    background-color: #C5A059 !important; /* Fondo dorado para que se vea */
+}

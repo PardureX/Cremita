@@ -16,18 +16,18 @@
    <link href="css/ekko-lightbox.css" rel="stylesheet">
 
    <style>
-      /* --- PURIFICACIÓN TOTAL CREMITA --- */
+      /* --- REDISEÑO TOTAL: DARK PREMIUM --- */
       
-      /* Adiós al verde en todas las secciones del catálogo */
-      .seccion_limpia_apolo {
-          background-color: #f4f4f4 !important;
+      /* Fondo Oscuro para el cuerpo y secciones */
+      body.shop_page, .seccion_limpia_apolo {
+          background-color: #0f0f0f !important;
           background-image: none !important;
-          padding: 60px 0 !important;
+          color: #ffffff !important;
       }
 
-      /* Banner elegante: Negro y Dorado */
+      /* Banner elegante con overlay oscuro */
       .innerpage_banner {
-          background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('images/inner_banner.jpg') !important;
+          background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('images/inner_banner.jpg') !important;
           background-size: cover !important;
           background-position: center !important;
           padding: 100px 0 !important;
@@ -45,48 +45,67 @@
           text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
       }
 
-      body.shop_page {
-          background-color: #f4f4f4 !important;
-      }
-
-      /* Tarjetas de Joyas Boutique */
+      /* Tarjetas de Joyas Boutique Dark */
       .product_blog {
-          background: #ffffff !important;
-          padding: 20px;
-          border-radius: 15px !important;
-          box-shadow: 0 8px 20px rgba(0,0,0,0.08) !important;
-          transition: all 0.3s ease;
-          border: 1px solid #eee !important;
+          background: #1a1a1a !important;
+          padding: 25px;
+          border-radius: 18px !important;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+          transition: all 0.4s ease;
+          border: 1px solid #333 !important;
           text-align: center;
+          height: 100%;
       }
 
       .product_blog:hover {
           transform: translateY(-10px);
+          border-color: #C5A059 !important;
           box-shadow: 0 12px 30px rgba(197, 160, 89, 0.2) !important;
       }
 
       .product_blog img {
-          border-radius: 10px;
+          border-radius: 12px;
           margin-bottom: 15px;
           max-width: 100%;
       }
 
+      .product_blog h3 {
+          color: #ffffff !important;
+          font-size: 1.1rem;
+      }
+
       .precio_tag {
-          color: #28a745 !important; /* Verde de éxito para el dinero */
-          font-weight: bold;
-          font-size: 1.2rem;
+          color: #C5A059 !important; /* Dorado para el valor de la joya */
+          font-weight: 800;
+          font-size: 1.3rem;
+          display: block;
       }
 
       /* Texto introductorio */
       .intro_texto_catalogo {
-          color: #333 !important;
+          color: #cccccc !important;
           font-size: 1.1rem;
           text-align: center;
           max-width: 800px;
           margin: 0 auto;
           line-height: 1.6;
       }
-      /* --- FIN MEJORAS --- */
+
+      /* Ajuste del Header para que combine */
+      .header_bottom_section {
+          background: #000 !important;
+      }
+
+      /* --- BOTONES DE REDES (Mantenemos tu estilo original) --- */
+      .redes-cremita-container { display: flex; flex-direction: column; gap: 15px; align-items: center; padding: 10px; }
+      .btn-redes { width: 55px; height: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none !important; position: relative; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); background: #1a1a1a; border: 1px solid #C5A059; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+      .btn-redes i, .btn-redes svg { font-size: 26px; width: 24px; fill: #C5A059; color: #C5A059; transition: all 0.3s ease; }
+      .btn-redes.wa:hover { background: #25D366; border-color: #25D366; transform: rotate(360deg) scale(1.1); }
+      .btn-redes.tt:hover { background: #000000; border-color: #fff; transform: scale(1.1) translateY(-5px); }
+      .btn-redes.ig:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); border-color: transparent; transform: scale(1.1) rotate(-10deg); }
+      .btn-redes:hover i, .btn-redes:hover svg { color: white; fill: white; }
+      .tooltip-redes { position: absolute; right: 70px; background: #C5A059; color: black; padding: 5px 12px; border-radius: 5px; font-size: 12px; font-weight: bold; opacity: 0; visibility: hidden; transition: all 0.3s ease; white-space: nowrap; }
+      .btn-redes:hover .tooltip-redes { opacity: 1; visibility: visible; right: 65px; }
    </style>
 </head>
 <body id="shop" class="shop_page">
@@ -134,13 +153,9 @@
    <section class="innerpage_banner">
       <div class="container">
          <div class="row">
-            <div class="col-sm-12">
-               <div class="full">
-                  <div class="page_title">
-                     <div class="full heading_s1">
-                        <h2><span>Catálogo</span></h2>
-                     </div>
-                  </div>
+            <div class="col-sm-12 text-center">
+               <div class="page_title">
+                  <h2><span>Catálogo</span></h2>
                </div>
             </div>
          </div>
@@ -151,7 +166,7 @@
       <div class="container">
          <div class="row">
             <div class="col-lg-12">
-               <p class="intro_texto_catalogo">Descubre nuestra exclusiva colección de joyería en Oro Laminado 18K y Plata 925. Calidad garantizada en cada pieza, diseñada para durar y resaltar tu estilo único.</p>
+               <p class="intro_texto_catalogo">Descubre nuestra exclusiva colección de joyería en Oro Laminado 18K y Plata 925. Calidad garantizada en cada pieza.</p>
             </div>
          </div>
       </div>
@@ -169,7 +184,8 @@
             <div class="col-md-4">
                <div class="product_blog margin_top_30">
                   <img src="images/pro2.jpg" alt="Joya Cremita" />
-                  <h3><span class="precio_tag">$100.000</span> Diamond ring</h3>
+                  <h3>Cadena San Benito Oro Laminado 18k</h3>
+                  <span class="precio_tag">$340.000</span>
                </div>
             </div>
             <div class="col-md-4">
@@ -232,11 +248,7 @@
 
    <div class="cpy">
       <div class="container">
-         <div class="row">
-            <div class="col-md-12">
-               <p>© 2026 Cremita Joyería - Todos los derechos reservados.</p>
-            </div>
-         </div>
+         <p>© 2026 Cremita Joyería - Todos los derechos reservados.</p>
       </div>
    </div>
 
@@ -247,18 +259,6 @@
          <a href="https://www.instagram.com/cremitajoyas?igsh=a2hhZGE5em4wMnFu" target="_blank" class="btn-redes ig"><i class="fa fa-instagram"></i><span class="tooltip-redes">Instagram</span></a>
       </div>
    </div>
-
-   <style>
-      .redes-cremita-container { display: flex; flex-direction: column; gap: 15px; align-items: center; padding: 10px; }
-      .btn-redes { width: 55px; height: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none !important; position: relative; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); background: #1a1a1a; border: 1px solid #C5A059; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-      .btn-redes i, .btn-redes svg { font-size: 26px; width: 24px; fill: #C5A059; color: #C5A059; transition: all 0.3s ease; }
-      .btn-redes.wa:hover { background: #25D366; border-color: #25D366; transform: rotate(360deg) scale(1.1); }
-      .btn-redes.tt:hover { background: #000000; border-color: #fff; transform: scale(1.1) translateY(-5px); }
-      .btn-redes.ig:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); border-color: transparent; transform: scale(1.1) rotate(-10deg); }
-      .btn-redes:hover i, .btn-redes:hover svg { color: white; fill: white; }
-      .tooltip-redes { position: absolute; right: 70px; background: #C5A059; color: black; padding: 5px 12px; border-radius: 5px; font-size: 12px; font-weight: bold; opacity: 0; visibility: hidden; transition: all 0.3s ease; white-space: nowrap; }
-      .btn-redes:hover .tooltip-redes { opacity: 1; visibility: visible; right: 65px; }
-   </style>
 
    <script src="js/jquery.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

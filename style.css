@@ -4267,3 +4267,34 @@ form#commant_form div.field textarea.custom_field {
     z-index: 1;
 }
 
+/* --- COLOR NEGRO TOTAL PARA EL MENÚ (PC Y MÓVIL) --- */
+.header_section, 
+.navbar, 
+.navbar-collapse, 
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link {
+    background-color: #000000 !important; /* Negro absoluto */
+    color: #C5A059 !important; /* Letras doradas */
+}
+
+/* Quitar el fondo verde específicamente en el móvil */
+.navbar-toggler {
+    background-color: #C5A059 !important; /* El botón de las 3 rayas será dorado */
+}
+
+/* --- ARREGLO PARA EL TÍTULO EN EL MÓVIL --- */
+@media (max-width: 768px) {
+    .slider_section .detail-box h1 {
+        font-size: 2.5rem !important; /* Ajusta el tamaño para que quepa */
+        color: #C5A059 !important;
+        display: block !important; /* Fuerza a que se muestre */
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    /* Si el texto está sobre la imagen y no se ve, le damos un fondo oscuro suave */
+    .slider_section .detail-box {
+        background: rgba(0, 0, 0, 0.5); /* Fondo negro transparente */
+        padding: 10px;
+        border-radius: 10px;
+    }
+}

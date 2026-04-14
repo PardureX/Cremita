@@ -4281,3 +4281,53 @@ form#commant_form div.field textarea.custom_field {
 .navbar-toggler {
     background-color: #C5A059 !important; /* Fondo dorado para que se vea */
 }
+/* ==========================================================
+   DISEÑO DEFINITIVO CREMITA: FONDO NEGRO Y DORADO FIJO
+   ========================================================== */
+
+/* 1. Fondo negro absoluto para TODA la página y el menú */
+body, 
+.header_section,
+.navbar,
+.navbar-collapse,
+#navbarSupportedContent,
+.product_section, /* Sección de productos */
+.about_section, /* Sección de nosotros */
+.contact_section, /* Sección de contacto */
+.footer_section { /* Sección de pie de página */
+    background-color: #000000 !important; /* Negro Joyería */
+    color: #C5A059 !important; /* Texto base en dorado */
+}
+
+/* 2. Color dorado fijo para TODO el texto del menú (siempre) */
+.nav-link, 
+.navbar-nav .nav-link, 
+.navbar-nav .nav-link.active, 
+.navbar-nav .nav-link:hover {
+    color: #C5A059 !important; /* Dorado Cremita */
+}
+
+/* 3. Asegurar que los títulos sean dorados y el texto descriptivo claro */
+h1, h2, h3, h4, h5, h6, .display-4 {
+    color: #C5A059 !important; /* Títulos en dorado */
+}
+
+p, span {
+    color: #C5A059 !important; /* Texto de párrafo en dorado suave */
+}
+
+/* 4. El botón de las 3 rayitas (hamburguesa) en dorado */
+.navbar-toggler {
+    background-color: transparent !important;
+    border: 2px solid #C5A059 !important; /* Borde dorado */
+}
+/* Forzar que las 3 rayitas sean doradas */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3%3Cpath stroke='%23C5A059' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+/* 5. Asegurar que el logo flote sobre el negro */
+.navbar-brand img {
+    background-color: #000000 !important;
+    border-radius: 5px; /* Un toque de elegancia */
+}

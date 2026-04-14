@@ -1,266 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-   <!-- Basic -->
+<head>
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- Mobile Metas -->
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <!-- Site Metas -->
-   <title>CREMITA</title>
-   <meta name="keywords" content="">
-   <meta name="description" content="">
-   <meta name="author" content="">
-   <!-- site icon -->
+   <title>CREMITA - Catálogo Completo</title>
    <link rel="icon" href="images/fevicon.png" type="image/png" />
-   <!-- Bootstrap core CSS -->
-   <link href="css/bootstrap.css" rel="stylesheet">
-   <!-- FontAwesome Icons core CSS -->
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
    <link href="css/font-awesome.min.css" rel="stylesheet">
-   <!-- Custom animate styles for this template -->
    <link href="css/animate.css" rel="stylesheet">
-   <!-- Custom styles for this template -->
    <link href="style.css" rel="stylesheet">
-   <!-- Responsive styles for this template -->
    <link href="css/responsive.css" rel="stylesheet">
-   <!-- Colors for this template -->
    <link href="css/colors.css" rel="stylesheet">
-   <!-- light box gallery -->
    <link href="css/ekko-lightbox.css" rel="stylesheet">
-   <!--[if lt IE 9]>
-   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-   <![endif]-->
-   </head>
-   <body id="shop" class="shop_page">
-      <!-- loader -->
-      <div id="preloader">
-         <img class="preloader" src="images/logo.png" alt="#">
-      </div>
-      <!-- end loader -->
-      <!-- header -->
-      <header class="header">
 
-        <div class="header_top_section">
-           <div class="container">
-              <div class="row">
+   <style>
+      /* --- PURIFICACIÓN TOTAL CREMITA --- */
+      
+      /* Adiós al verde en todas las secciones del catálogo */
+      .seccion_limpia_apolo {
+          background-color: #f4f4f4 !important;
+          background-image: none !important;
+          padding: 60px 0 !important;
+      }
+
+      /* Banner elegante: Negro y Dorado */
+      .innerpage_banner {
+          background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('images/inner_banner.jpg') !important;
+          background-size: cover !important;
+          background-position: center !important;
+          padding: 100px 0 !important;
+          text-align: center;
+          border-bottom: 3px solid #C5A059 !important;
+      }
+
+      .page_title h2 span {
+          color: #C5A059 !important;
+          font-size: 55px !important;
+          font-weight: 800 !important;
+          text-transform: uppercase;
+          letter-spacing: 5px;
+          background: none !important;
+          text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      }
+
+      body.shop_page {
+          background-color: #f4f4f4 !important;
+      }
+
+      /* Tarjetas de Joyas Boutique */
+      .product_blog {
+          background: #ffffff !important;
+          padding: 20px;
+          border-radius: 15px !important;
+          box-shadow: 0 8px 20px rgba(0,0,0,0.08) !important;
+          transition: all 0.3s ease;
+          border: 1px solid #eee !important;
+          text-align: center;
+      }
+
+      .product_blog:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 12px 30px rgba(197, 160, 89, 0.2) !important;
+      }
+
+      .product_blog img {
+          border-radius: 10px;
+          margin-bottom: 15px;
+          max-width: 100%;
+      }
+
+      .precio_tag {
+          color: #28a745 !important; /* Verde de éxito para el dinero */
+          font-weight: bold;
+          font-size: 1.2rem;
+      }
+
+      /* Texto introductorio */
+      .intro_texto_catalogo {
+          color: #333 !important;
+          font-size: 1.1rem;
+          text-align: center;
+          max-width: 800px;
+          margin: 0 auto;
+          line-height: 1.6;
+      }
+      /* --- FIN MEJORAS --- */
+   </style>
+</head>
+<body id="shop" class="shop_page">
+
+   <div id="preloader">
+      <img class="preloader" src="images/logo.png" alt="#">
+   </div>
+
+   <header class="header">
+      <div class="header_top_section">
+         <div class="container">
+            <div class="row">
                <div class="col-lg-3">
-                  <div class="full">
-                     <div class="logo">
-                        <a href="index.html"><img src="images/logo.png" alt="#" /></a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-9 site_information">
-                  <div class="full">
-                      <div class="top_section_info">
-                         
-                      </div>
-                  </div>
-               </div>
-            </div>
-           </div>
-        </div>
-
-        <div class="header_bottom_section">
-
-         <div class="container">
-            
-           <div class="row">
-               <div class="col-md-12">
-                  <div class="full ">
-                     <div class="main_menu">
-                        <nav class="navbar navbar-inverse navbar-toggleable-md">
-                           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cloapediamenu" aria-controls="cloapediamenu" aria-expanded="false" aria-label="Toggle navigation">
-                           <span class="float-left">Menu</span>
-                           <span class="float-right"><i class="fa fa-bars"></i> <i class="fa fa-close"></i></span>
-                           </button>
-                           <div class="collapse navbar-collapse justify-content-md-center" id="cloapediamenu">
-                              <ul class="navbar-nav">
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.html">INICIO</a>
-                                 </li>
-								 <!--
-                                 <li class="nav-item">
-                                    <a class="nav-link color-aqua-hover" href="about.html">About</a>
-                                 </li>
-								 -->
-								 <!--
-                                 <li class="nav-item">
-                                    <a class="nav-link color-aqua-hover" href="jewellery.html">Jewellery</a>
-                                 </li>
-								 -->
-                                 <li class="nav-item active">
-                                    <a class="nav-link color-grey-hover" href="shop.html">CATÁLOGO</a>
-                                 </li>
-								 <!--
-                                 <li class="nav-item">
-                                    <a class="nav-link color-grey-hover" href="contact.html">Contact</a>
-                                 </li>
-								 -->
-                              </ul>
-                           </div>
-                        </nav>
-                     </div>
-					 <!--
-                     <div class="search_bar">
-                        <form action="index.html">
-                           <input type="text" class="search_field" placeholder="Search" required />
-                           <button class="search_button" type="button"><i class="fa fa-search"></i></button>
-                        </form>
-                     </div>
+                  <div class="logo">
+                     <a href="index.html"><img src="images/logo.png" alt="#" /></a>
                   </div>
                </div>
             </div>
          </div>
-		 -->
-
-      </header>
-      <!-- end header -->
-       <!-- inner page -->
-      <section class="innerpage_banner">
-         <div class="container">
-            <div class="row">
-               <div class="col-sm-12">
-                  <div class="full">
-                     <div class="page_title">
-                        <div class="full heading_s1">
-                           <h2><span>Our Shop</span></h2>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- end inner page -->
-      <!-- section -->
-      <section class="layout_padding section padding_bottom_0">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-12">
-                  <div class="full">
-                     <p class="large">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- end section -->
-      <!-- section -->
-      <section class="layout_padding haf_layout section">
-         <div class="container">
-           <div class="row product_section">
-               <div class="col-md-4"> 
-                  <div class="full product_blog margin_top_30">
-                     <img src="images/pro1.jpg" alt="#" />
-                     <h3><span style="color: #72dd78 !important;">$100</span> Diamond ring</h3>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="full product_blog margin_top_30">
-                     <img src="images/pro2.jpg" alt="#" />
-                     <h3><span style="color: #72dd78 !important;">$100</span> Diamond ring</h3>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="full product_blog margin_top_30">
-                     <img src="images/pro3.jpg" alt="#" />
-                     <h3><span style="color: #72dd78 !important;">$100</span> Diamond ring</h3>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="full product_blog margin_top_30">
-                     <img src="images/pro3.jpg" alt="#" />
-                     <h3><span style="color: #72dd78 !important;">$100</span> Diamond ring</h3>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="full product_blog margin_top_30">
-                     <img src="images/pro4.jpg" alt="#" />
-                     <h3><span style="color: #72dd78 !important;">$100</span> Diamond ring</h3>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="full product_blog margin_top_30">
-                     <img src="images/pro5.jpg" alt="#" />
-                     <h3><span style="color: #72dd78 !important;">$100</span> Diamond ring</h3>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- end section -->
-      <!-- footer -->
-      <footer class="footer layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-3 col-sm-12">
-                  <a href="index.html"><img class="img-responsive" src="images/logo_footer.png" alt="#" /></a>
-               </div>
-
-               <div class="col-md-3 col-sm-12">
-                  <div class="footer_link_heading">
-                     <h3>Address</h3>
-                  </div>
-                  <div class="address_infor">
-                     <p> 
-                        <span class="icon"><img src="images/location_icon.png" alt="#" /></span>
-                        <span class="addrs">104 New York , USA</span>
-                     </p>
-                  </div>
-               </div>
-
-               <div class="col-md-3 col-sm-12">
-                  <div class="footer_link_heading">
-                     <h3>Social Link</h3>
-                  </div>
-                  <div class="social_icon">
-                    <ul>
-                       <li><a href="#"><img src="images/fb.png" alt="#" /></a></li>
-                       <li><a href="#"><img src="images/tw.png" alt="#" /></a></li>
-                       <li><a href="#"><img src="images/gp.png" alt="#" /></a></li>
-                       <li><a href="#"><img src="images/in.png" alt="#" /></a></li>
-                    </ul>
-                  </div>
-               </div>
-               
-               <div class="col-md-3 col-sm-12">
-                  <div class="footer_link_heading">
-                     <h3>Newsletter</h3>
-                  </div>
-                  <div class="email_address_bottom">
-                     <form>
-                        <fieldset>
-                           <div class="field_email">
-                              <input type="email" name="email" placeholder="Enter Your Email">
-                              <button><i class="fa fa-search"></i></button>
-                           </div>
-                        </fieldset>
-                     </form>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </footer>
-      <div class="cpy">
-        <div class="container">
-           <div class="row">
-             <div class="col-md-12">
-               <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
-             </div>
-           </div>
-        </div>
       </div>
-      <!-- end footer -->
-      <!-- Core JavaScript
-         ================================================== -->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/tether.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/parallax.js"></script>
-      <script src="js/animate.js"></script>
-      <script src="js/ekko-lightbox.js"></script>
-      <script src="js/custom.js"></script>
-	  
-   </body>
+
+      <div class="header_bottom_section">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <nav class="navbar navbar-expand-md navbar-dark">
+                     <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#cloapediamenu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#C5A059" viewBox="0 0 16 16">
+                           <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                        </svg>
+                     </button>
+                     <div class="collapse navbar-collapse justify-content-center" id="cloapediamenu">
+                        <ul class="navbar-nav">
+                           <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
+                           <li class="nav-item active"><a class="nav-link color-grey-hover" href="shop.html">CATÁLOGO</a></li>
+                        </ul>
+                     </div>
+                  </nav>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <section class="innerpage_banner">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="full">
+                  <div class="page_title">
+                     <div class="full heading_s1">
+                        <h2><span>Catálogo</span></h2>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="seccion_limpia_apolo">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <p class="intro_texto_catalogo">Descubre nuestra exclusiva colección de joyería en Oro Laminado 18K y Plata 925. Calidad garantizada en cada pieza, diseñada para durar y resaltar tu estilo único.</p>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="seccion_limpia_apolo" style="padding-top: 0 !important;">
+      <div class="container">
+         <div class="row product_section">
+            <div class="col-md-4"> 
+               <div class="product_blog margin_top_30">
+                  <img src="images/pro1.jpg" alt="Joya Cremita" />
+                  <h3><span class="precio_tag">$100.000</span> Diamond ring</h3>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="product_blog margin_top_30">
+                  <img src="images/pro2.jpg" alt="Joya Cremita" />
+                  <h3><span class="precio_tag">$100.000</span> Diamond ring</h3>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="product_blog margin_top_30">
+                  <img src="images/pro3.jpg" alt="Joya Cremita" />
+                  <h3><span class="precio_tag">$100.000</span> Diamond ring</h3>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="product_blog margin_top_30">
+                  <img src="images/pro3.jpg" alt="Joya Cremita" />
+                  <h3><span class="precio_tag">$100.000</span> Diamond ring</h3>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="product_blog margin_top_30">
+                  <img src="images/pro4.jpg" alt="Joya Cremita" />
+                  <h3><span class="precio_tag">$100.000</span> Diamond ring</h3>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="product_blog margin_top_30">
+                  <img src="images/pro5.jpg" alt="Joya Cremita" />
+                  <h3><span class="precio_tag">$100.000</span> Diamond ring</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <footer class="footer layout_padding">
+      <div class="container">
+         <div class="row" style="display: flex; align-items: flex-start; flex-wrap: wrap;">
+            <div class="col-md-3" style="margin-bottom: 20px;">
+               <div class="info_logo">
+                  <a href="index.html"><img src="images/logo.png" alt="" style="max-width: 150px;"></a>
+               </div>
+            </div>
+            <div class="col-md-3" style="margin-bottom: 20px;">
+               <h4 style="color: #C5A059; margin-bottom: 15px;">Nuestra Calidad</h4>
+               <ul style="list-style: none; padding: 0; color: #fff; font-size: 13px; line-height: 1.8;">
+                  <li><i class="fa fa-star" style="color: #C5A059;"></i> Oro Laminado 18K</li>
+                  <li><i class="fa fa-shield" style="color: #C5A059;"></i> Garantía de 1 año</li>
+                  <li><i class="fa fa-tint" style="color: #C5A059;"></i> Resistente al agua</li>
+               </ul>
+            </div>
+            <div class="col-md-3" style="margin-bottom: 20px;">
+               <h4 style="color: #C5A059; margin-bottom: 15px;">Ubicación</h4>
+               <p style="color: #fff; font-size: 13px;"><i class="fa fa-map-marker" style="color: #C5A059;"></i> Palmira, Valle del Cauca</p>
+            </div>
+            <div class="col-md-3" style="margin-bottom: 20px;">
+               <h4 style="color: #C5A059; margin-bottom: 15px;">Compra Directa</h4>
+               <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" style="background-color: #C5A059; color: #000; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 12px; display: block; text-align: center;">
+                  <i class="fa fa-whatsapp"></i> ASESORÍA Y PEDIDOS
+               </a>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <div class="cpy">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <p>© 2026 Cremita Joyería - Todos los derechos reservados.</p>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div style="position: fixed; bottom: 30px; right: 30px; z-index: 9999;">
+      <div class="redes-cremita-container">
+         <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn-redes wa"><i class="fa fa-whatsapp"></i><span class="tooltip-redes">WhatsApp</span></a>
+         <a href="https://www.tiktok.com/@cremitajoyas?_r=1&_t=ZS-95OpCUgqKSz" target="_blank" class="btn-redes tt"><svg viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.24 71.18V0h88a121.18 121.18 0 0 0 1.86 22.32c.35 22.69 11.5 43.59 29.6 57.73A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z"/></svg><span class="tooltip-redes">TikTok</span></a>
+         <a href="https://www.instagram.com/cremitajoyas?igsh=a2hhZGE5em4wMnFu" target="_blank" class="btn-redes ig"><i class="fa fa-instagram"></i><span class="tooltip-redes">Instagram</span></a>
+      </div>
+   </div>
+
+   <style>
+      .redes-cremita-container { display: flex; flex-direction: column; gap: 15px; align-items: center; padding: 10px; }
+      .btn-redes { width: 55px; height: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none !important; position: relative; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); background: #1a1a1a; border: 1px solid #C5A059; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+      .btn-redes i, .btn-redes svg { font-size: 26px; width: 24px; fill: #C5A059; color: #C5A059; transition: all 0.3s ease; }
+      .btn-redes.wa:hover { background: #25D366; border-color: #25D366; transform: rotate(360deg) scale(1.1); }
+      .btn-redes.tt:hover { background: #000000; border-color: #fff; transform: scale(1.1) translateY(-5px); }
+      .btn-redes.ig:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); border-color: transparent; transform: scale(1.1) rotate(-10deg); }
+      .btn-redes:hover i, .btn-redes:hover svg { color: white; fill: white; }
+      .tooltip-redes { position: absolute; right: 70px; background: #C5A059; color: black; padding: 5px 12px; border-radius: 5px; font-size: 12px; font-weight: bold; opacity: 0; visibility: hidden; transition: all 0.3s ease; white-space: nowrap; }
+      .btn-redes:hover .tooltip-redes { opacity: 1; visibility: visible; right: 65px; }
+   </style>
+
+   <script src="js/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="js/parallax.js"></script>
+   <script src="js/animate.js"></script>
+   <script src="js/ekko-lightbox.js"></script>
+   <script src="js/custom.js"></script>
+</body>
 </html>

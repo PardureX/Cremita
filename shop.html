@@ -18,34 +18,37 @@
    <style>
       /* --- REDISEÑO TOTAL: DARK PREMIUM --- */
       
-      /* Fondo Oscuro para el cuerpo y secciones */
       body.shop_page, .seccion_limpia_apolo {
           background-color: #0f0f0f !important;
           background-image: none !important;
           color: #ffffff !important;
       }
 
-      /* Banner elegante con overlay oscuro */
+      /* BANNER MEJORADO: Menos opacidad para el fondo y más protagonismo al Oro */
       .innerpage_banner {
-          background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('images/inner_banner.jpg') !important;
+          background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('images/inner_banner.jpg') !important;
           background-size: cover !important;
           background-position: center !important;
-          padding: 100px 0 !important;
+          padding: 110px 0 !important;
           text-align: center;
           border-bottom: 3px solid #C5A059 !important;
       }
 
+      /* Título con Efecto "Luz de Oro" */
       .page_title h2 span {
-          color: #C5A059 !important;
-          font-size: 55px !important;
+          color: #C5A059 !important; /* El dorado base de Cremita */
+          font-size: 60px !important; 
           font-weight: 800 !important;
           text-transform: uppercase;
-          letter-spacing: 5px;
+          letter-spacing: 8px;
           background: none !important;
-          text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+          /* TRIPLE SOMBRA: Separación negra + Resplandor dorado + Brillo blanco metálico */
+          text-shadow: 
+              0px 4px 12px rgba(0, 0, 0, 0.9), 
+              0px 0px 25px rgba(255, 215, 0, 0.5), 
+              0px 0px 5px rgba(255, 255, 255, 0.8) !important;
       }
 
-      /* Tarjetas de Joyas Boutique Dark */
       .product_blog {
           background: #1a1a1a !important;
           padding: 25px;
@@ -75,13 +78,12 @@
       }
 
       .precio_tag {
-          color: #C5A059 !important; /* Dorado para el valor de la joya */
+          color: #C5A059 !important;
           font-weight: 800;
           font-size: 1.3rem;
           display: block;
       }
 
-      /* Texto introductorio */
       .intro_texto_catalogo {
           color: #cccccc !important;
           font-size: 1.1rem;
@@ -91,12 +93,11 @@
           line-height: 1.6;
       }
 
-      /* Ajuste del Header para que combine */
       .header_bottom_section {
           background: #000 !important;
       }
 
-      /* --- BOTONES DE REDES (Mantenemos tu estilo original) --- */
+      /* BOTONES DE REDES */
       .redes-cremita-container { display: flex; flex-direction: column; gap: 15px; align-items: center; padding: 10px; }
       .btn-redes { width: 55px; height: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none !important; position: relative; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); background: #1a1a1a; border: 1px solid #C5A059; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
       .btn-redes i, .btn-redes svg { font-size: 26px; width: 24px; fill: #C5A059; color: #C5A059; transition: all 0.3s ease; }
@@ -166,54 +167,215 @@
       <div class="container">
          <div class="row">
             <div class="col-lg-12">
-               <p class="intro_texto_catalogo">Descubre nuestra exclusiva colección de joyería en Oro Laminado 18K y Plata 925. Calidad garantizada en cada pieza.</p>
+               <p class="intro_texto_catalogo">Descubre nuestra exclusiva colección de joyería en Oro Laminado 18K y proximamente  Plata ley 925. Calidad garantizada en cada pieza.</p>
             </div>
          </div>
       </div>
    </section>
 
    <section class="seccion_limpia_apolo" style="padding-top: 0 !important;">
-      <div class="container">
-         <div class="row product_section">
-            <div class="col-md-4"> 
-               <div class="product_blog margin_top_30">
-                  <img src="images/pro1.jpg" alt="Joya Cremita" />
-                  <h3><span class="precio_tag">$100.000</span> Diamond ring</h3>
-               </div>
-            </div>
-            <div class="col-md-4">
-               <div class="product_blog margin_top_30">
-                  <img src="images/pro2.jpg" alt="Joya Cremita" />
-                  <h3>Cadena San Benito Oro Laminado 18k</h3>
-                  <span class="precio_tag">$340.000</span>
-               </div>
-            </div>
-            <div class="col-md-4">
-               <div class="product_blog margin_top_30">
-                  <img src="images/pro3.jpg" alt="Joya Cremita" />
-                  <h3><span class="precio_tag">$100.000</span> Diamond ring</h3>
-               </div>
-            </div>
-            <div class="col-md-4">
-               <div class="product_blog margin_top_30">
-                  <img src="images/pro3.jpg" alt="Joya Cremita" />
-                  <h3><span class="precio_tag">$100.000</span> Diamond ring</h3>
-               </div>
-            </div>
-            <div class="col-md-4">
-               <div class="product_blog margin_top_30">
-                  <img src="images/pro4.jpg" alt="Joya Cremita" />
-                  <h3><span class="precio_tag">$100.000</span> Diamond ring</h3>
-               </div>
-            </div>
-            <div class="col-md-4">
-               <div class="product_blog margin_top_30">
-                  <img src="images/pro5.jpg" alt="Joya Cremita" />
-                  <h3><span class="precio_tag">$100.000</span> Diamond ring</h3>
-               </div>
-            </div>
+    <div class="container">
+   <div class="row">
+      <div class="col-md-12 text-center mt-5">
+         <h2 style="color: #C5A059; font-weight: 800; text-transform: uppercase; border-bottom: 2px solid #333; display: inline-block; padding-bottom: 10px;">Cadenas Oro Laminado 18K</h2>
+      </div>
+   </div>
+   <div class="row product_section">
+      <div class="col-md-4">
+         <div class="product_blog margin_top_30">
+            <a href="images/cadena1.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Longitud de 60cm, incluye dije mediano de San Benito. Oro Laminado 18k.">
+               <img src="images/cadena1.jpg" alt="Cremita Joyas" />
+            </a>
+            <h3>Cadena San Benito</h3>
+            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$370.000</span>
+            <span class="precio_tag">$340.000</span>
+            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
+               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
+            </a>
          </div>
       </div>
+      <div class="col-md-4">
+         <div class="product_blog margin_top_30">
+            <a href="images/cadena2.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Tejido Luna delicado, 45cm de largo. Oro Laminado 18k.">
+               <img src="images/cadena2.jpg" alt="Cremita Joyas" />
+            </a>
+            <h3>Cadena Luna</h3>
+            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$130.000</span>
+            <span class="precio_tag">$120.000</span>
+            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
+               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
+            </a>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="product_blog margin_top_30">
+            <a href="images/cadena3.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Dije Virgencita Milagrosa, 50cm de largo. Oro Laminado 18k.">
+               <img src="images/cadena3.jpg" alt="Cremita Joyas" />
+            </a>
+            <h3>Cadena Virgencita Milagrosa</h3>
+            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$160.000</span>
+            <span class="precio_tag">$120.000</span>
+            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
+               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
+            </a>
+         </div>
+      </div>
+   </div>
+
+   <div class="row">
+      <div class="col-md-12 text-center mt-5">
+         <h2 style="color: #C5A059; font-weight: 800; text-transform: uppercase; border-bottom: 2px solid #333; display: inline-block; padding-bottom: 10px;">Topitos Oro Laminado 18K</h2>
+      </div>
+   </div>
+   <div class="row product_section">
+      <div class="col-md-4">
+         <div class="product_blog margin_top_30">
+            <a href="images/topo1.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Diseño Cruz, sistema de rosca de seguridad. Oro Laminado 18k.">
+               <img src="images/topo1.jpg" alt="Cremita Joyas" />
+            </a>
+            <h3>Topito Cruz</h3>
+            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$75.000</span>
+            <span class="precio_tag">$50.000</span>
+            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
+               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
+            </a>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="product_blog margin_top_30">
+            <a href="images/topo2.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Virgen Milagrosa detallada, Oro Laminado 18k.">
+               <img src="images/topo2.jpg" alt="Cremita Joyas" />
+            </a>
+            <h3>Topitos Virgen Milagrosa</h3>
+            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$110.000</span>
+            <span class="precio_tag">$100.000</span>
+            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
+               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
+            </a>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="product_blog margin_top_30">
+            <a href="images/topo3.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Estilo Rolex clásico, Oro Laminado 18k.">
+               <img src="images/topo3.jpg" alt="Cremita Joyas" />
+            </a>
+            <h3>Topitos Rolex</h3>
+            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$110.000</span>
+            <span class="precio_tag">$100.000</span>
+            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
+               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
+            </a>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="product_blog margin_top_30">
+            <a href="images/topo4.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Variante Rolex, acabado premium. Oro Laminado 18k.">
+               <img src="images/topo4.jpg" alt="Cremita Joyas" />
+            </a>
+            <h3>Topitos Rolex (Variante)</h3>
+            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$110.000</span>
+            <span class="precio_tag">$100.000</span>
+            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
+               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
+            </a>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="product_blog margin_top_30">
+            <a href="images/topo5.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Bolita lisa 6mm, Oro Laminado 18k.">
+               <img src="images/topo5.jpg" alt="Cremita Joyas" />
+            </a>
+            <h3>Topitos Bolita</h3>
+            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$110.000</span>
+            <span class="precio_tag">$100.000</span>
+            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
+               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
+            </a>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="product_blog margin_top_30">
+            <a href="images/topo6.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Bolitas 3mm, perfectas para niñas o segundo agujero. Oro Laminado 18k.">
+               <img src="images/topo6.jpg" alt="Cremita Joyas" />
+            </a>
+            <h3>Topitos Bolita Pequeños</h3>
+            <span class="precio_tag">$90.000</span>
+            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
+               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
+            </a>
+         </div>
+      </div>
+   </div>
+
+   <div class="row">
+      <div class="col-md-12 text-center mt-5">
+         <h2 style="color: #C5A059; font-weight: 800; text-transform: uppercase; border-bottom: 2px solid #333; display: inline-block; padding-bottom: 10px;">Pulseras Oro Laminado 18K</h2>
+      </div>
+   </div>
+   <div class="row product_section">
+      <div class="col-md-4">
+         <div class="product_blog margin_top_30">
+            <a href="images/pulsera1.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Tejido tipo Gucci, resistente y elegante. Oro Laminado 18k.">
+               <img src="images/pulsera1.jpg" alt="Cremita Joyas" />
+            </a>
+            <h3>Pulsera Gucci</h3>
+            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$220.000</span>
+            <span class="precio_tag">$190.000</span>
+            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
+               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
+            </a>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="product_blog margin_top_30">
+            <a href="images/pulsera2.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Tejido Cartier Figaro 3x1, Oro Laminado 18k.">
+               <img src="images/pulsera2.jpg" alt="Cremita Joyas" />
+            </a>
+            <h3>Pulsera Cartier Figaro</h3>
+            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$220.000</span>
+            <span class="precio_tag">$190.000</span>
+            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
+               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
+            </a>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="product_blog margin_top_30">
+            <a href="images/pulsera3.jpg" data-toggle="lightbox" data-gallery="cremita" data-footer="CARACTERÍSTICAS: Tejido Chino tradicional, alta durabilidad. Oro Laminado 18k.">
+               <img src="images/pulsera3.jpg" alt="Cremita Joyas" />
+            </a>
+            <h3>Pulsera Tejido Chino</h3>
+            <span style="color: #888; text-decoration: line-through; font-size: 0.9rem;">$165.000</span>
+            <span class="precio_tag">$130.000</span>
+            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_comprar_ws">
+               <i class="fa fa-shopping-cart"></i> COMPRAR POR WHATSAPP
+            </a>
+         </div>
+      </div>
+   </div>
+</div>
+
+<style>
+/* Estilo del botón para que no mueva tus cajas alineadas */
+.btn_comprar_ws {
+    display: block;
+    background-color: #25D366;
+    color: white !important;
+    text-align: center;
+    padding: 12px;
+    margin: 15px 10px 5px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+.btn_comprar_ws:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+</style>
    </section>
 
    <footer class="footer layout_padding">

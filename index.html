@@ -1,54 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <title>Cremita Joyería</title>
-   <link rel="icon" href="images/fevicon.png" type="image/png" />
+   <title>Cremita Joyería | Oro Laminado 18K</title>
+   <meta name="description" content="Joyería en Oro Laminado 18K. Envíos a todo Colombia, pago contra entrega, garantía de 1 año.">
+   
+   <link rel="icon" href="images/fevicon.png" type="image/png">
    <link rel="icon" href="images/favicon.png" type="image/png">
-
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
    <link href="css/font-awesome.min.css" rel="stylesheet">
-   <link href="css/animate.css" rel="stylesheet">
    <link href="style.css" rel="stylesheet">
    <link href="css/responsive.css" rel="stylesheet">
-   <link href="css/colors.css" rel="stylesheet">
-   <link href="css/ekko-lightbox.css" rel="stylesheet">
 
    <style>
-
-      /* ── BANNER DE CONFIANZA ── */
-      .banner_confianza {
-         background: linear-gradient(135deg, #1a1400, #2a1f00, #1a1400);
-         border-top: 2px solid #C5A059;
-         border-bottom: 2px solid #C5A059;
-         padding: 18px 0;
+      :root {
+         --oro: #C5A059;
+         --oro-claro: #f0c97a;
+         --oscuro: #0a0a0a;
+         --gris-oscuro: #1a1a1a;
       }
-      .banner_confianza .item_confianza {
+
+      .header, .header_top_section, .header_bottom_section, .navbar {
+         background: #0a0a0a !important;
+      }
+      .nav-link { color: #fff !important; }
+      .nav-link:hover { color: var(--oro) !important; }
+
+      .logo img {
+         border: 2px solid #C5A059;
+         border-radius: 12px;
+         padding: 5px;
+         box-shadow: 0 0 15px rgba(197,160,89,0.2);
+         transition: all 0.3s ease;
+         background-color: #0a0a0a;
+      }
+      .logo img:hover {
+         box-shadow: 0 0 20px rgba(197,160,89,0.5);
+         transform: scale(1.02);
+      }
+
+      .slider_section {
+         background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+         min-height: 500px;
          display: flex;
          align-items: center;
-         justify-content: center;
-         gap: 10px;
-         color: #fff;
-         font-size: 13px;
-         font-weight: 600;
-         text-transform: uppercase;
-         letter-spacing: 0.5px;
-         padding: 8px 0;
       }
-      .banner_confianza .item_confianza i { color: #C5A059; font-size: 20px; }
-      .banner_confianza .separador { color: #C5A059; font-size: 20px; display: flex; align-items: center; }
-      @media (max-width: 768px) { .banner_confianza .separador { display: none; } }
+      .slider_inner { padding: 80px 0; }
+      .slider_coint_inner { text-align: left; }
+      .slider_coint_inner h1 {
+         font-size: 60px;
+         color: var(--oro);
+         text-transform: uppercase;
+         font-weight: bold;
+         margin-bottom: 0;
+      }
+      .slider_coint_inner p {
+         font-size: 24px;
+         color: #FFF;
+         font-style: italic;
+         font-weight: 300;
+         margin-top: 10px;
+      }
+      @media (max-width: 768px) {
+         .slider_section { min-height: 300px; }
+         .slider_inner { padding: 40px 0; }
+         .slider_coint_inner h1 { font-size: 32px; }
+         .slider_coint_inner p { font-size: 16px; }
+      }
 
-      /* ── SECCIÓN POR QUÉ ELEGIRNOS ── */
       .seccion_porque {
          background-color: #0f0f0f;
          padding: 70px 0;
       }
       .porque_titulo {
          text-align: center;
-         color: #C5A059;
+         color: var(--oro);
          font-size: 32px;
          font-weight: 800;
          text-transform: uppercase;
@@ -62,7 +90,7 @@
          margin-bottom: 50px;
       }
       .porque_card {
-         background: #1a1a1a;
+         background: var(--gris-oscuro);
          border: 1px solid #2a2a2a;
          border-radius: 16px;
          padding: 35px 25px;
@@ -71,14 +99,13 @@
          height: 100%;
       }
       .porque_card:hover {
-         border-color: #C5A059;
+         border-color: var(--oro);
          transform: translateY(-8px);
-         box-shadow: 0 12px 30px rgba(197,160,89,0.15);
       }
       .porque_icono {
          width: 70px;
          height: 70px;
-         background: linear-gradient(135deg, #C5A059, #f0c97a);
+         background: linear-gradient(135deg, var(--oro), var(--oro-claro));
          border-radius: 50%;
          display: flex;
          align-items: center;
@@ -86,17 +113,81 @@
          margin: 0 auto 20px;
       }
       .porque_icono i { color: #000; font-size: 28px; }
-      .porque_card h4 {
-         color: #fff;
-         font-size: 16px;
-         font-weight: 700;
-         margin-bottom: 12px;
-         text-transform: uppercase;
-         letter-spacing: 1px;
-      }
-      .porque_card p { color: #999; font-size: 13px; line-height: 1.7; margin: 0; }
+      .porque_card h4 { color: #fff; font-size: 16px; font-weight: 700; margin-bottom: 12px; text-transform: uppercase; }
+      .porque_card p { color: #999; font-size: 13px; line-height: 1.7; }
 
-      /* ── SECCIÓN CTA ── */
+      .banner_confianza_pagos {
+         background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+         border-top: 2px solid var(--oro);
+         border-bottom: 2px solid var(--oro);
+         padding: 40px 0;
+      }
+      .seccion-titulo {
+         text-align: center;
+         color: var(--oro);
+         font-size: 14px;
+         font-weight: 600;
+         text-transform: uppercase;
+         letter-spacing: 3px;
+         margin-bottom: 20px;
+      }
+      .item_confianza {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         text-align: center;
+         gap: 8px;
+         color: #fff;
+         font-size: 12px;
+         font-weight: 600;
+         text-transform: uppercase;
+         padding: 10px;
+      }
+      .item_confianza i {
+         color: var(--oro);
+         font-size: 28px;
+      }
+      .separador {
+         color: var(--oro);
+         font-size: 18px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+      .pago-logo {
+         display: inline-flex;
+         flex-direction: column;
+         align-items: center;
+         gap: 6px;
+         background: #0a0a0a;
+         border: 1px solid #333;
+         border-radius: 12px;
+         padding: 12px 16px;
+         margin: 4px;
+         transition: all 0.3s ease;
+         min-width: 90px;
+      }
+      .pago-logo:hover {
+         border-color: var(--oro);
+         transform: translateY(-3px);
+      }
+      .pago-logo i {
+         color: var(--oro);
+         font-size: 28px;
+      }
+      .pago-logo span {
+         color: #fff;
+         font-size: 11px;
+         font-weight: 600;
+         text-transform: uppercase;
+      }
+      @media (max-width: 768px) {
+         .separador { display: none; }
+         .pago-logo { padding: 8px 12px; min-width: 70px; }
+         .pago-logo i { font-size: 22px; }
+      }
+
       .seccion_cta {
          background: linear-gradient(135deg, #1a1100, #0f0f0f, #1a1100);
          border-top: 1px solid #2a2a2a;
@@ -104,47 +195,30 @@
          padding: 70px 0;
          text-align: center;
       }
-      .cta_titulo {
-         color: #fff;
-         font-size: 36px;
-         font-weight: 800;
-         text-transform: uppercase;
-         margin-bottom: 15px;
-         line-height: 1.2;
-      }
-      .cta_titulo span { color: #C5A059; }
+      .cta_titulo { color: #fff; font-size: 36px; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; }
+      .cta_titulo span { color: var(--oro); }
       .cta_subtitulo { color: #aaa; font-size: 16px; margin-bottom: 35px; }
-      .btn_cta_catalogo {
+      .btn_cta {
          display: inline-block;
-         background: linear-gradient(135deg, #C5A059, #f0c97a);
-         color: #000 !important;
          font-weight: 800;
          font-size: 15px;
          text-transform: uppercase;
          letter-spacing: 2px;
          padding: 16px 40px;
          border-radius: 50px;
-         text-decoration: none !important;
+         text-decoration: none;
          transition: all 0.3s ease;
+      }
+      .btn_cta_catalogo {
+         background: linear-gradient(135deg, var(--oro), var(--oro-claro));
+         color: #000 !important;
          box-shadow: 0 6px 20px rgba(197,160,89,0.4);
       }
-      .btn_cta_catalogo:hover {
-         transform: translateY(-3px);
-         box-shadow: 0 10px 30px rgba(197,160,89,0.6);
-      }
+      .btn_cta_catalogo:hover { transform: translateY(-3px); }
       .btn_cta_ws {
-         display: inline-block;
          background: transparent;
          color: #25D366 !important;
-         font-weight: 700;
-         font-size: 14px;
-         text-transform: uppercase;
-         letter-spacing: 1px;
-         padding: 16px 30px;
-         border-radius: 50px;
-         text-decoration: none !important;
          border: 2px solid #25D366;
-         transition: all 0.3s ease;
          margin-left: 15px;
       }
       .btn_cta_ws:hover { background: #25D366; color: #fff !important; transform: translateY(-3px); }
@@ -153,14 +227,13 @@
          .cta_titulo { font-size: 26px; }
       }
 
-      /* ── FOOTER PREMIUM ── */
       .footer_cremita {
-         background: #0a0a0a;
-         border-top: 2px solid #C5A059;
+         background: var(--oscuro);
+         border-top: 2px solid var(--oro);
          padding: 60px 0 30px;
       }
       .footer_col_title {
-         color: #C5A059;
+         color: var(--oro);
          font-weight: 800;
          font-size: 14px;
          text-transform: uppercase;
@@ -170,67 +243,65 @@
          border-bottom: 1px solid #2a2a2a;
       }
       .footer_lista { list-style: none; padding: 0; margin: 0; }
-      .footer_lista li {
-         color: #bbb;
-         font-size: 13px;
-         line-height: 2;
-         display: flex;
-         align-items: center;
-         gap: 8px;
-      }
-      .footer_lista li i { color: #C5A059; width: 16px; }
-      .pago_badge {
-         display: inline-flex;
-         align-items: center;
-         gap: 6px;
-         background: #1a1a1a;
-         border: 1px solid #333;
-         border-radius: 8px;
-         padding: 8px 14px;
-         margin: 4px;
-         color: #fff;
-         font-size: 12px;
-         font-weight: 600;
-         transition: border-color 0.3s;
-      }
-      .pago_badge:hover { border-color: #C5A059; }
-      .pago_badge i { color: #C5A059; font-size: 16px; }
+      .footer_lista li { color: #bbb; font-size: 13px; line-height: 2; display: flex; align-items: center; gap: 8px; }
+      .footer_lista li i { color: var(--oro); width: 16px; }
       .cpy_cremita {
          background: #050505;
-         border-top: 1px solid #1a1a1a;
+         border-top: 1px solid var(--gris-oscuro);
          padding: 15px 0;
          text-align: center;
          color: #555;
          font-size: 12px;
       }
 
-      /* ── REDES FLOTANTES ── */
       .redes-cremita-container { display: flex; flex-direction: column; gap: 15px; align-items: center; padding: 10px; }
-      .btn-redes { width: 55px; height: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none !important; position: relative; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); background: #1a1a1a; border: 1px solid #C5A059; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-      .btn-redes i, .btn-redes svg { font-size: 26px; width: 24px; fill: #C5A059; color: #C5A059; transition: all 0.3s ease; }
+      .btn-redes {
+         width: 55px;
+         height: 55px;
+         border-radius: 50%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         text-decoration: none;
+         transition: all 0.4s ease;
+         background: var(--gris-oscuro);
+         border: 1px solid var(--oro);
+      }
+      .btn-redes i, .btn-redes svg { font-size: 26px; width: 24px; fill: var(--oro); color: var(--oro); }
       .btn-redes.wa:hover { background: #25D366; border-color: #25D366; transform: rotate(360deg) scale(1.1); }
-      .btn-redes.tt:hover { background: #000; border-color: #fff; transform: scale(1.1) translateY(-5px); }
-      .btn-redes.ig:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); border-color: transparent; transform: scale(1.1) rotate(-10deg); }
+      .btn-redes.tt:hover { background: #000; border-color: #fff; transform: scale(1.1); }
+      .btn-redes.ig:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); transform: scale(1.1); }
       .btn-redes:hover i, .btn-redes:hover svg { color: white; fill: white; }
-      .tooltip-redes { position: absolute; right: 70px; background: #C5A059; color: black; padding: 5px 12px; border-radius: 5px; font-size: 12px; font-weight: bold; opacity: 0; visibility: hidden; transition: all 0.3s ease; white-space: nowrap; }
+      .tooltip-redes {
+         position: absolute;
+         right: 70px;
+         background: var(--oro);
+         color: black;
+         padding: 5px 12px;
+         border-radius: 5px;
+         font-size: 12px;
+         font-weight: bold;
+         opacity: 0;
+         visibility: hidden;
+         transition: all 0.3s ease;
+         white-space: nowrap;
+      }
       .btn-redes:hover .tooltip-redes { opacity: 1; visibility: visible; right: 65px; }
-
    </style>
 </head>
-<body id="home_page" class="home_page">
+<body>
 
    <div id="preloader">
-      <img class="preloader" src="images/logo.png" alt="#">
+      <img class="preloader" src="images/logo.png" alt="Cremita Joyería">
    </div>
 
-   <!-- HEADER -->
    <header class="header">
       <div class="header_top_section">
          <div class="container">
             <div class="row">
                <div class="col-lg-3">
                   <div class="logo">
-                     <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                     <a href="index.html"><img src="images/logo.png" alt="Cremita Joyería"></a>
                   </div>
                </div>
             </div>
@@ -242,8 +313,7 @@
                <div class="col-md-12">
                   <nav class="navbar navbar-expand-md navbar-dark">
                      <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#cloapediamenu"
-                        aria-controls="cloapediamenu" aria-expanded="false" aria-label="Toggle navigation"
-                        style="border-color: #C5A059; padding: 8px 12px;">
+                        style="border-color: #C5A059; padding: 8px 12px; background: transparent;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#C5A059" viewBox="0 0 16 16">
                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                         </svg>
@@ -251,7 +321,7 @@
                      <div class="collapse navbar-collapse justify-content-center" id="cloapediamenu">
                         <ul class="navbar-nav">
                            <li class="nav-item active"><a class="nav-link" href="index.html">INICIO</a></li>
-                           <li class="nav-item"><a class="nav-link color-grey-hover" href="shop.html">CATÁLOGO</a></li>
+                           <li class="nav-item"><a class="nav-link" href="shop.html">CATÁLOGO</a></li>
                         </ul>
                      </div>
                   </nav>
@@ -261,7 +331,6 @@
       </div>
    </header>
 
-   <!-- SLIDER (sin cambios) -->
    <section class="slider_section">
       <div class="container-fluid">
          <div id="main_slider" class="carousel slide" data-bs-ride="carousel">
@@ -270,8 +339,8 @@
                   <div class="container">
                      <div class="row">
                         <div class="slider_coint_inner">
-                           <h1 style="font-size: 60px; color: #C5A059; text-transform: uppercase; font-weight: bold; margin-bottom: 0;">Cremita Joyería</h1>
-                           <p style="font-size: 24px; color: #FFF; font-style: italic; font-weight: 300; margin-top: 10px;">"Solo como Cremita Joyería lo sabe hacer"</p>
+                           <h1>Cremita Joyería</h1>
+                           <p>"Solo como Cremita Joyería lo sabe hacer"</p>
                         </div>
                      </div>
                   </div>
@@ -281,227 +350,187 @@
       </div>
    </section>
 
-   <!-- BANNER DE CONFIANZA (nuevo) -->
-   <div class="banner_confianza">
+   <section class="seccion_porque">
+      <div class="container">
+         <h2 class="porque_titulo">¿Por qué elegir Cremita?</h2>
+         <p class="porque_subtitulo">Porque cada joya cuenta una historia — y la tuya merece brillar</p>
+         <div class="row g-4">
+            <div class="col-6 col-md-3">
+               <div class="porque_card">
+                  <div class="porque_icono"><i class="fa fa-certificate"></i></div>
+                  <h4>Oro Laminado 18K</h4>
+                  <p>Brillo y calidad de oro sólido a un precio accesible.</p>
+               </div>
+            </div>
+            <div class="col-6 col-md-3">
+               <div class="porque_card">
+                  <div class="porque_icono"><i class="fa fa-heart"></i></div>
+                  <h4>Hipoalergénico</h4>
+                  <p>Apto para todo tipo de piel, incluyendo las más sensibles.</p>
+               </div>
+            </div>
+            <div class="col-6 col-md-3">
+               <div class="porque_card">
+                  <div class="porque_icono"><i class="fa fa-tint"></i></div>
+                  <h4>Resistente al agua</h4>
+                  <p>Ducha, playa, gimnasio — tus joyas te acompañan sin oxidarse.</p>
+               </div>
+            </div>
+            <div class="col-6 col-md-3">
+               <div class="porque_card">
+                  <div class="porque_icono"><i class="fa fa-shield"></i></div>
+                  <h4>Garantía 1 año</h4>
+                  <p>Si tu joya pierde el color en el primer año, la reponemos.</p>
+               </div>
+            </div>
+            <div class="col-6 col-md-3">
+               <div class="porque_card">
+                  <div class="porque_icono"><i class="fa fa-sun-o"></i></div>
+                  <h4>No mancha la piel</h4>
+                  <p>Sin marcas verdes, sin decoloraciones. Solo brillo puro.</p>
+               </div>
+            </div>
+            <div class="col-6 col-md-3">
+               <div class="porque_card">
+                  <div class="porque_icono"><i class="fa fa-gift"></i></div>
+                  <h4>Empaque especial</h4>
+                  <p>Cada pedido llega en presentación elegante.</p>
+               </div>
+            </div>
+            <div class="col-6 col-md-3">
+               <div class="porque_card">
+                  <div class="porque_icono"><i class="fa fa-whatsapp"></i></div>
+                  <h4>Atención Personalizada</h4>
+                  <p>Resolvemos tus dudas al instante por WhatsApp.</p>
+               </div>
+            </div>
+            <div class="col-6 col-md-3">
+               <div class="porque_card">
+                  <div class="porque_icono"><i class="fa fa-truck"></i></div>
+                  <h4>Envío asegurado</h4>
+                  <p>Desde Palmira hasta donde estés. Seguimiento y entrega segura.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <div class="banner_confianza_pagos">
       <div class="container">
          <div class="row align-items-center justify-content-center text-center">
-            <div class="col-6 col-md-auto">
+            <div class="col-6 col-md-3">
                <div class="item_confianza">
                   <i class="fa fa-truck"></i>
                   <span>Envío a todo Colombia</span>
                </div>
             </div>
             <div class="col-auto d-none d-md-flex separador">✦</div>
-            <div class="col-6 col-md-auto">
+            <div class="col-6 col-md-3">
                <div class="item_confianza">
                   <i class="fa fa-money"></i>
                   <span>Pago contra entrega</span>
                </div>
             </div>
             <div class="col-auto d-none d-md-flex separador">✦</div>
-            <div class="col-6 col-md-auto">
+            <div class="col-6 col-md-3">
                <div class="item_confianza">
                   <i class="fa fa-shield"></i>
                   <span>Garantía 1 año</span>
                </div>
             </div>
             <div class="col-auto d-none d-md-flex separador">✦</div>
-            <div class="col-6 col-md-auto">
+            <div class="col-6 col-md-3">
                <div class="item_confianza">
                   <i class="fa fa-lock"></i>
                   <span>Compra 100% segura</span>
                </div>
             </div>
          </div>
+
+         <div style="height: 1px; background: linear-gradient(90deg, transparent, var(--oro), transparent); margin: 30px 0;"></div>
+
+         <div class="seccion-titulo">✦ Métodos de Pago ✦</div>
+         <div class="row justify-content-center">
+            <div class="col-auto">
+               <div class="d-flex flex-wrap justify-content-center gap-2">
+                  <div class="pago-logo"><i class="fa fa-mobile"></i><span>Nequi</span></div>
+                  <div class="pago-logo"><i class="fa fa-university"></i><span>Bancolombia</span></div>
+                  <div class="pago-logo"><i class="fa fa-money"></i><span>Efectivo</span></div>
+                  <div class="pago-logo"><i class="fa fa-truck"></i><span>Contra entrega</span></div>
+                  <div class="pago-logo"><i class="fa fa-whatsapp"></i><span>Daviplata</span></div>
+               </div>
+            </div>
+         </div>
+         <p class="text-center text-muted mt-3" style="font-size: 11px; color: #888 !important;">* Pago seguro y verificado en cada pedido</p>
       </div>
    </div>
 
-   <!-- SECCIÓN EXISTENTE (sin cambios) -->
-   <section style="background-color: #000; padding: 50px 0; border-top: 1px solid #C5A059; border-bottom: 1px solid #C5A059; width: 100%;">
-      <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-         <div style="display: flex; justify-content: center; align-items: flex-start; flex-wrap: wrap; gap: 40px;">
-            <div style="flex: 1; min-width: 250px; text-align: center; padding: 10px;">
-               <h4 style="color: #C5A059; font-size: 18px; margin-bottom: 15px; text-transform: uppercase; font-weight: bold;">Envíos Nacionales</h4>
-               <p style="color: #ffffff; font-size: 14px; line-height: 1.5;">Llegamos a todo el país con seguridad.</p>
-            </div>
-            <div style="flex: 1; min-width: 250px; text-align: center; padding: 10px;">
-               <h4 style="color: #C5A059; font-size: 18px; margin-bottom: 15px; text-transform: uppercase; font-weight: bold;">Pago Contra Entrega</h4>
-               <p style="color: #ffffff; font-size: 14px; line-height: 1.5;">Recibe tu joya y paga en la puerta de tu casa.</p>
-            </div>
-            <div style="flex: 1; min-width: 250px; text-align: center; padding: 10px;">
-               <h4 style="color: #C5A059; font-size: 18px; margin-bottom: 15px; text-transform: uppercase; font-weight: bold;">Pagos Seguros</h4>
-               <p style="color: #ffffff; font-size: 14px; line-height: 1.5;">Manejamos Nequi, Bancolombia y más.</p>
-            </div>
-         </div>
-      </div>
-   </section>
-
-   <!-- SECCIÓN POR QUÉ ELEGIRNOS (nueva) -->
-   <section class="seccion_porque">
-      <div class="container">
-         <h2 class="porque_titulo">¿Por qué elegir Cremita?</h2>
-         <p class="porque_subtitulo">Porque cada joya cuenta una historia — y la tuya merece brillar</p>
-         <div class="row g-4">
-
-            <div class="col-md-3 col-sm-6">
-               <div class="porque_card">
-                  <div class="porque_icono"><i class="fa fa-certificate"></i></div>
-                  <h4>Oro Laminado 18K</h4>
-                  <p>Brillo y calidad de oro sólido a un precio que sí puedes pagar. Sin sacrificar la elegancia.</p>
-               </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-               <div class="porque_card">
-                  <div class="porque_icono"><i class="fa fa-heart"></i></div>
-                  <h4>Hipoalergénico</h4>
-                  <p>Apto para todo tipo de piel, incluyendo las más sensibles. Úsalo sin miedo, día y noche.</p>
-               </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-               <div class="porque_card">
-                  <div class="porque_icono"><i class="fa fa-tint"></i></div>
-                  <h4>Resistente al agua</h4>
-                  <p>Ducha, playa, gimnasio — tus joyas te acompañan sin oxidarse ni perder su brillo dorado.</p>
-               </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-               <div class="porque_card">
-                  <div class="porque_icono"><i class="fa fa-shield"></i></div>
-                  <h4>Garantía 1 año</h4>
-                  <p>Si tu joya pierde el color en el primer año, la reponemos. Tu confianza vale más que cualquier pieza.</p>
-               </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-               <div class="porque_card">
-                  <div class="porque_icono"><i class="fa fa-sun-o"></i></div>
-                  <h4>No mancha la piel</h4>
-                  <p>Sin marcas verdes, sin decoloraciones. Solo brillo puro donde la joya toca tu piel.</p>
-               </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-               <div class="porque_card">
-                  <div class="porque_icono"><i class="fa fa-gift"></i></div>
-                  <h4>Empaque especial</h4>
-                  <p>Cada pedido llega en presentación elegante, perfecta para regalar o para guardar tu joya con cariño.</p>
-               </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-               <div class="porque_card">
-                  <div class="porque_icono"><i class="fa fa-truck"></i></div>
-                  <h4>Envío a todo Colombia</h4>
-                  <p>Desde Palmira hasta donde estés. Tu joya llega segura, rápida y con seguimiento.</p>
-               </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-               <div class="porque_card">
-                  <div class="porque_icono"><i class="fa fa-whatsapp"></i></div>
-                  <h4>Atención Personalizada</h4>
-                  <p>Resolvemos tus dudas al instante por WhatsApp. Asesoría real, sin robots, con personas.</p>
-               </div>
-            </div>
-
-         </div>
-      </div>
-   </section>
-
-   <!-- SECCIÓN CTA (nueva) -->
    <section class="seccion_cta">
       <div class="container">
          <h2 class="cta_titulo">Tu joya perfecta te está<br><span>esperando</span></h2>
-         <p class="cta_subtitulo">Explora nuestra colección de Oro Laminado 18K y enamórate de cada pieza</p>
+         <p class="cta_subtitulo">Explora nuestra colección de Oro Laminado 18K</p>
          <div>
-            <a href="shop.html" class="btn_cta_catalogo">
-               <i class="fa fa-gem"></i> Ver Catálogo Completo
-            </a>
-            <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn_cta_ws">
-               <i class="fa fa-whatsapp"></i> Hablar con nosotros
-            </a>
+            <a href="shop.html" class="btn_cta btn_cta_catalogo"><i class="fa fa-gem"></i> Ver Catálogo Completo</a>
+            <a href="https://wa.me/573162132781?text=Hola%2C%20quiero%20ver%20las%20joyas%20de%20Cremita" target="_blank" rel="noopener noreferrer" class="btn_cta btn_cta_ws"><i class="fa fa-whatsapp"></i> Hablar con nosotros</a>
          </div>
       </div>
    </section>
 
-   <!-- FOOTER PREMIUM (nuevo) -->
    <footer class="footer_cremita">
       <div class="container">
          <div class="row">
-
             <div class="col-md-3 col-sm-6 mb-4">
-               <a href="index.html"><img src="images/logo.png" alt="Cremita Joyería" style="max-width:140px; margin-bottom:15px;"></a>
-               <p style="color:#888; font-size:12px; line-height:1.7;">Joyería con alma. Cada pieza está hecha para brillar contigo, todos los días.</p>
+               <a href="index.html">
+                  <img src="images/logo.png" alt="Cremita Joyería" style="max-width:140px; margin-bottom:15px; border: 2px solid #C5A059; border-radius: 12px; padding: 5px;">
+               </a>
+               <p style="color:#888; font-size:12px;">Joyería con alma. Cada pieza está hecha para brillar contigo.</p>
             </div>
-
             <div class="col-md-3 col-sm-6 mb-4">
                <p class="footer_col_title">✦ Nuestra Promesa</p>
                <ul class="footer_lista">
                   <li><i class="fa fa-star"></i> Oro Laminado 18K certificado</li>
-                  <li><i class="fa fa-shield"></i> Garantía 1 año por pérdida de color</li>
-                  <li><i class="fa fa-tint"></i> 100% resistente al agua</li>
-                  <li><i class="fa fa-heart"></i> Hipoalergénico — apto piel sensible</li>
-                  <li><i class="fa fa-sun-o"></i> No se oxida ni mancha la piel</li>
-                  <li><i class="fa fa-gift"></i> Empaque especial incluido</li>
+                  <li><i class="fa fa-shield"></i> Garantía 1 año</li>
+                  <li><i class="fa fa-tint"></i> Resistente al agua</li>
+                  <li><i class="fa fa-heart"></i> Hipoalergénico</li>
                </ul>
             </div>
-
             <div class="col-md-3 col-sm-6 mb-4">
-               <p class="footer_col_title">✦ Métodos de Pago</p>
-               <div style="display:flex; flex-wrap:wrap; gap:4px;">
-                  <span class="pago_badge"><i class="fa fa-mobile"></i> Nequi</span>
-                  <span class="pago_badge"><i class="fa fa-university"></i> Bancolombia</span>
-                  <span class="pago_badge"><i class="fa fa-money"></i> Efectivo</span>
-                  <span class="pago_badge"><i class="fa fa-truck"></i> Contra entrega</span>
-                  <span class="pago_badge"><i class="fa fa-whatsapp"></i> Daviplata</span>
-               </div>
-               <p style="color:#666; font-size:11px; margin-top:12px;">* Pago seguro y verificado en cada pedido.</p>
-            </div>
-
-            <div class="col-md-3 col-sm-6 mb-4">
-               <p class="footer_col_title">✦ Encuéntranos</p>
+               <p class="footer_col_title">✦ Contáctanos</p>
                <ul class="footer_lista">
-                  <li><i class="fa fa-map-marker"></i> Palmira, Valle del Cauca</li>
-                  <li><i class="fa fa-whatsapp"></i> Pedidos por WhatsApp</li>
-                  <li><i class="fa fa-instagram"></i> @cremitajoyas</li>
-                  <li><i class="fa fa-clock-o"></i> Lun – Sáb: 8am a 8pm</li>
+                  <li><i class="fa fa-whatsapp"></i> <a href="https://wa.me/573162132781" target="_blank" rel="noopener noreferrer" style="color:#bbb; text-decoration:none;">WhatsApp</a></li>
+                  <li><i class="fa fa-instagram"></i> <a href="https://www.instagram.com/cremitajoyas" target="_blank" rel="noopener noreferrer" style="color:#bbb; text-decoration:none;">@cremitajoyas</a></li>
                </ul>
-               <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" style="display:block; margin-top:15px; background:#C5A059; color:#000; padding:10px; border-radius:8px; text-align:center; font-weight:800; font-size:12px; text-decoration:none;">
-                  <i class="fa fa-whatsapp"></i> PEDIR AHORA
-               </a>
             </div>
-
+            <div class="col-md-3 col-sm-6 mb-4">
+               <p class="footer_col_title">✦ Horario</p>
+               <ul class="footer_lista">
+                  <li><i class="fa fa-clock-o"></i> Lun – Sáb: 8am a 8pm</li>
+                  <li><i class="fa fa-map-marker"></i> Palmira, Valle</li>
+               </ul>
+            </div>
          </div>
       </div>
    </footer>
 
    <div class="cpy_cremita">
       <div class="container">
-         <p style="margin:0;">© 2026 Cremita Joyería — Todos los derechos reservados. Hecho con ❤️ en Palmira, Colombia.</p>
+         <p>© <span id="year"></span> Cremita Joyería — Todos los derechos reservados.</p>
       </div>
    </div>
 
-   <!-- REDES FLOTANTES (sin cambios) -->
    <div style="position: fixed; bottom: 30px; right: 30px; z-index: 9999;">
       <div class="redes-cremita-container">
-         <a href="https://wa.me/message/LUT5DZTFINCMO1" target="_blank" class="btn-redes wa"><i class="fa fa-whatsapp"></i><span class="tooltip-redes">WhatsApp</span></a>
-         <a href="https://www.tiktok.com/@cremitajoyas?_r=1&_t=ZS-95OpCUgqKSz" target="_blank" class="btn-redes tt">
-            <svg viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.24 71.18V0h88a121.18 121.18 0 0 0 1.86 22.32c.35 22.69 11.5 43.59 29.6 57.73A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z"/></svg>
-            <span class="tooltip-redes">TikTok</span>
-         </a>
-         <a href="https://www.instagram.com/cremitajoyas?igsh=a2hhZGE5em4wMnFu" target="_blank" class="btn-redes ig"><i class="fa fa-instagram"></i><span class="tooltip-redes">Instagram</span></a>
+         <a href="https://wa.me/573162132781?text=Hola%2C%20quiero%20ver%20las%20joyas%20de%20Cremita" target="_blank" rel="noopener noreferrer" class="btn-redes wa"><i class="fa fa-whatsapp"></i><span class="tooltip-redes">WhatsApp</span></a>
+         <a href="https://www.tiktok.com/@cremitajoyas" target="_blank" rel="noopener noreferrer" class="btn-redes tt"><svg viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.24 71.18V0h88a121.18 121.18 0 0 0 1.86 22.32c.35 22.69 11.5 43.59 29.6 57.73A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z"/></svg><span class="tooltip-redes">TikTok</span></a>
+         <a href="https://www.instagram.com/cremitajoyas" target="_blank" rel="noopener noreferrer" class="btn-redes ig"><i class="fa fa-instagram"></i><span class="tooltip-redes">Instagram</span></a>
       </div>
    </div>
 
    <script src="js/jquery.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
    <script src="js/parallax.js"></script>
    <script src="js/animate.js"></script>
-   <script src="js/ekko-lightbox.js"></script>
    <script src="js/custom.js"></script>
-
 </body>
 </html>

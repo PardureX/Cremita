@@ -21,20 +21,96 @@
           color: #ffffff !important;
       }
 
-      /* BORDE PARA EL LOGO */
-      .logo img {
-         border: 2px solid #C5A059;
-         border-radius: 12px;
-         padding: 5px;
-         box-shadow: 0 0 15px rgba(197,160,89,0.2);
-         transition: all 0.3s ease;
-         background-color: #0a0a0a;
-         max-width: 100%;
-         height: auto;
+      /* ===== ANIMACIÓN DEL TEXTO "CREMITA" + ESTRELLA + LÍNEA BASE ===== */
+      .logo-animado {
+          text-align: center;
+          padding: 20px 0;
+          min-height: 140px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
       }
-      .logo img:hover {
-         box-shadow: 0 0 20px rgba(197,160,89,0.5);
-         transform: scale(1.02);
+      .texto-animado {
+          font-size: 48px;
+          font-weight: 800;
+          color: #C5A059;
+          text-transform: uppercase;
+          letter-spacing: 4px;
+          font-family: 'Arial', sans-serif;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          flex-wrap: wrap;
+          justify-content: center;
+      }
+      .cursor {
+          display: inline-block;
+          width: 3px;
+          background-color: #C5A059;
+          animation: parpadear 0.8s infinite;
+      }
+      @keyframes parpadear {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
+      }
+      .estrella-icono {
+          display: inline-block;
+          font-size: 48px;
+          color: #C5A059;
+          opacity: 0;
+          transform: scale(0);
+          transition: all 0.3s ease;
+          margin-left: 10px;
+      }
+      .estrella-icono.destello {
+          opacity: 1;
+          transform: scale(1.2);
+          animation: brillar 0.5s ease-out forwards;
+      }
+      @keyframes brillar {
+          0% { transform: scale(0); opacity: 0; text-shadow: 0 0 0px #C5A059; }
+          50% { transform: scale(1.4); opacity: 1; text-shadow: 0 0 20px #C5A059, 0 0 40px #f0c97a; }
+          100% { transform: scale(1); opacity: 1; text-shadow: 0 0 5px #C5A059; }
+      }
+      
+      /* LÍNEA BASE QUE APARECE DEBAJO */
+      .linea-base {
+          width: 0;
+          height: 4px;
+          background: linear-gradient(90deg, transparent, #C5A059, #f0c97a, #C5A059, transparent);
+          margin-top: 15px;
+          border-radius: 4px;
+          transition: width 0.6s ease-out;
+      }
+      .linea-base.visible {
+          width: 320px;
+      }
+      
+      /* Sombra / efecto de soporte */
+      .soporte-texto {
+          display: inline-block;
+          position: relative;
+      }
+      .soporte-texto::before {
+          content: '';
+          position: absolute;
+          bottom: -8px;
+          left: 0;
+          width: 0;
+          height: 3px;
+          background: #C5A059;
+          transition: width 0.5s ease;
+      }
+      .soporte-texto.soportado::before {
+          width: 100%;
+      }
+      
+      @media (max-width: 768px) {
+          .texto-animado { font-size: 28px; letter-spacing: 2px; }
+          .estrella-icono { font-size: 28px; }
+          .logo-animado { min-height: 100px; padding: 15px 0; }
+          .linea-base.visible { width: 220px; }
       }
 
       .innerpage_banner {
@@ -46,7 +122,6 @@
           border-bottom: 3px solid #C5A059 !important;
       }
 
-      /* TÍTULO CORREGIDO - NO SE SALE DEL FONDO */
       .page_title h2 span {
           color: #C5A059 !important;
           font-size: clamp(32px, 8vw, 60px) !important;
@@ -64,7 +139,6 @@
          .page_title h2 span { letter-spacing: 2px !important; }
       }
 
-      /* BANNER DE CONFIANZA - RESPONSIVE */
       .banner_confianza {
           background: linear-gradient(135deg, #1a1400, #2a1f00, #1a1400);
           border-top: 2px solid #C5A059;
@@ -163,7 +237,6 @@
 
       .header_bottom_section { background: #000 !important; }
 
-      /* BOTÓN COMPRAR - TAMAÑO CORREGIDO PARA MÓVIL */
       .btn_comprar_ws {
           display: block;
           background-color: #25D366;
@@ -189,7 +262,6 @@
          .btn_comprar_ws { font-size: 13px; padding: 12px; }
       }
 
-      /* FOOTER MEJORADO */
       .footer_cremita {
           background: #0a0a0a;
           border-top: 2px solid #C5A059;
@@ -224,7 +296,6 @@
           font-size: 12px;
       }
 
-      /* MÉTODOS DE PAGO */
       .pago_badge {
           display: inline-flex;
           align-items: center;
@@ -251,7 +322,6 @@
           font-size: 10px;
       }
 
-      /* MODAL CARACTERÍSTICAS */
       .modal-cremita .modal-content {
           background: #1a1a1a;
           border: 1px solid #C5A059;
@@ -295,7 +365,6 @@
       .caract_texto h5 { color: #C5A059; font-size: 12px; font-weight: 700; margin-bottom: 2px; }
       .caract_texto p { color: #bbb; font-size: 11px; margin: 0; line-height: 1.4; }
 
-      /* MODAL DE IMAGEN (LIGHTBOX) */
       .image-modal {
           display: none;
           position: fixed;
@@ -331,7 +400,6 @@
       }
       .close-modal:hover { color: #fff; }
 
-      /* REDES FLOTANTES - TAMAÑO CORREGIDO */
       .redes-cremita-container { display: flex; flex-direction: column; gap: 10px; align-items: center; padding: 5px; }
       .btn-redes { 
          width: 45px; 
@@ -381,14 +449,15 @@
       <img class="preloader" src="images/logo.png" alt="Cremita Joyería">
    </div>
 
-   <!-- HEADER -->
+   <!-- HEADER (con animación en lugar del logo) -->
    <header class="header">
       <div class="header_top_section">
          <div class="container">
             <div class="row">
-               <div class="col-lg-3">
-                  <div class="logo">
-                     <a href="index.html"><img src="images/logo.png" alt="Cremita Joyería" /></a>
+               <div class="col-lg-12">
+                  <div class="logo-animado">
+                     <div class="texto-animado" id="textoAnimado"></div>
+                     <div class="linea-base" id="lineaBase"></div>
                   </div>
                </div>
             </div>
@@ -477,10 +546,9 @@
       </div>
    </section>
 
-   <!-- CATÁLOGO -->
+   <!-- CATÁLOGO (se mantiene igual) -->
    <section class="seccion_limpia_apolo" style="padding-top: 10px;">
       <div class="container">
-
          <!-- CADENAS -->
          <div class="row">
             <div class="col-md-12 text-center mt-4">
@@ -617,7 +685,6 @@
                </div>
             </div>
          </div>
-
       </div>
    </section>
 
@@ -629,8 +696,7 @@
                <h5 class="modal-title" id="modalTitulo">Características del Producto</h5>
                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body" id="modalCuerpo">
-            </div>
+            <div class="modal-body" id="modalCuerpo"></div>
             <div class="modal-footer" style="border-top:1px solid #2a2a2a;">
                <a href="#" onclick="enviarWhatsAppGeneral()" class="btn_comprar_ws" style="margin:0; flex:1;">
                   <i class="fa fa-whatsapp"></i> Consultar por WhatsApp
@@ -652,7 +718,6 @@
       <div class="container">
          <div class="row">
             <div class="col-md-3 col-sm-6 mb-3">
-               <a href="index.html"><img src="images/logo.png" alt="Cremita Joyería" style="max-width:100px; margin-bottom:10px; border: 2px solid #C5A059; border-radius: 12px; padding: 4px;"></a>
                <p style="color:#888; font-size:10px;">Joyería con alma. Cada pieza está hecha para brillar contigo.</p>
             </div>
             <div class="col-md-3 col-sm-6 mb-3">
@@ -687,7 +752,7 @@
 
    <div class="cpy_cremita">
       <div class="container">
-         <p style="margin:0;">© 2026 Cremita Joyería — Todos los derechos reservados.</p>
+         <p style="margin:0;">© 2026 Cremita Joyería — Todos los derechos reservados. Hecho con ❤️ en Palmira, Colombia.</p>
       </div>
    </div>
 
@@ -710,35 +775,58 @@
    <script src="js/custom.js"></script>
 
    <script>
-   // NÚMERO DE WHATSAPP (CAMBIA AQUÍ TU NÚMERO)
+   // ===== ANIMACIÓN DE TEXTO "CREMITA" + ESTRELLA + LÍNEA BASE =====
+   const texto = "Cremita";
+   const contenedor = document.getElementById('textoAnimado');
+   const lineaBase = document.getElementById('lineaBase');
+   let i = 0;
+   
+   function escribirTexto() {
+      if (i < texto.length) {
+         contenedor.innerHTML = texto.substring(0, i+1) + '<span class="cursor">|</span>';
+         i++;
+         setTimeout(escribirTexto, 150);
+      } else {
+         // Terminó de escribir, quitar cursor y agregar estrella
+         contenedor.innerHTML = texto + ' <i class="fa fa-star estrella-icono" id="estrellaAnimada"></i>';
+         const estrella = document.getElementById('estrellaAnimada');
+         setTimeout(() => {
+            estrella.classList.add('destello');
+         }, 100);
+         
+         // Después del destello de la estrella, mostrar la línea base
+         setTimeout(() => {
+            lineaBase.classList.add('visible');
+         }, 700);
+      }
+   }
+   
+   // Iniciar animación al cargar la página
+   document.addEventListener('DOMContentLoaded', function() {
+      contenedor.innerHTML = '<span class="cursor">|</span>';
+      setTimeout(escribirTexto, 500);
+   });
+
    const numeroWhatsApp = "573162132781";
    
-   // Función para enviar mensaje con información del producto
    function enviarWhatsApp(producto, precio, medida = '') {
       let mensaje = `Hola, estoy interesado en comprar: ${producto}`;
       if (medida) mensaje += ` (Medida: ${medida})`;
       mensaje += ` - Precio: $${precio}. Quiero más información.`;
-      const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
-      window.open(url, '_blank');
+      window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`, '_blank');
       return false;
    }
    
    function enviarWhatsAppGeneral() {
-      let mensaje = `Hola, estoy interesado en los productos de Cremita Joyería. Quiero más información.`;
-      const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
-      window.open(url, '_blank');
+      window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent('Hola, estoy interesado en los productos de Cremita Joyería. Quiero más información.')}`, '_blank');
       return false;
    }
    
-   // Función para abrir imagen en grande
    function abrirImagen(src, titulo) {
-      var modal = document.getElementById('imageModal');
-      var modalImg = document.getElementById('modalImage');
-      var captionText = document.getElementById('modalCaption');
-      
+      const modal = document.getElementById('imageModal');
+      document.getElementById('modalImage').src = src;
+      document.getElementById('modalCaption').innerHTML = titulo || "Producto Cremita Joyería";
       modal.style.display = "block";
-      modalImg.src = src;
-      captionText.innerHTML = titulo || "Producto Cremita Joyería";
       document.body.style.overflow = "hidden";
    }
    
@@ -748,10 +836,9 @@
    }
    
    document.addEventListener('keydown', function(event) {
-      if (event.key === "Escape") { cerrarImagen(); }
+      if (event.key === "Escape") cerrarImagen();
    });
 
-   // Características de productos
    const caracteristicas = {
       cadena: `
          <div class="caract_item"><div class="caract_icon"><i class="fa fa-certificate"></i></div><div class="caract_texto"><h5>Material</h5><p>Oro Laminado 18K de alta calidad.</p></div></div>

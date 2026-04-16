@@ -314,12 +314,12 @@
          font-size: 12px;
       }
 
-      /* ===== ESTILOS DEL CARRITO (para index.html) ===== */
+      /* ===== ESTILOS DEL CARRITO ===== */
       .cart-wrapper {
           position: fixed;
           top: 25px;
           right: 25px;
-          z-index: 9999;
+          z-index: 9998;
           display: flex;
           flex-direction: column;
           align-items: flex-end;
@@ -402,8 +402,110 @@
           .envio-gratis-msg {
               font-size: 9px;
               padding: 4px 12px;
-              white-space: nowrap;
           }
+      }
+
+      /* ===== BOTÓN DE USUARIO (LOGIN/REGISTRO) ESQUINA SUPERIOR IZQUIERDA ===== */
+      .user-wrapper {
+          position: fixed;
+          top: 25px;
+          left: 25px;
+          z-index: 9999;
+      }
+      .user-btn {
+          background: #C5A059;
+          border: none;
+          border-radius: 60px;
+          padding: 10px 20px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          cursor: pointer;
+          box-shadow: 0 4px 15px rgba(197,160,89,0.4);
+          transition: all 0.3s ease;
+          font-weight: bold;
+          color: #000;
+          font-size: 14px;
+      }
+      .user-btn:hover {
+          transform: scale(1.05);
+          background: #f0c97a;
+      }
+      .user-btn i {
+          font-size: 18px;
+      }
+      .user-dropdown {
+          position: absolute;
+          top: 55px;
+          left: 0;
+          background: #1a1a1a;
+          border: 1px solid #C5A059;
+          border-radius: 16px;
+          min-width: 260px;
+          padding: 12px 0;
+          display: none;
+          z-index: 10000;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      }
+      .user-dropdown.show {
+          display: block;
+      }
+      .user-dropdown .user-info {
+          padding: 10px 16px;
+          border-bottom: 1px solid #2a2a2a;
+          margin-bottom: 8px;
+      }
+      .user-dropdown .user-name {
+          color: #C5A059;
+          font-weight: bold;
+          font-size: 14px;
+      }
+      .user-dropdown .user-email {
+          color: #888;
+          font-size: 11px;
+      }
+      .user-dropdown .user-compras {
+          color: #C5A059;
+          font-size: 11px;
+          margin-top: 5px;
+      }
+      .user-dropdown .dropdown-item {
+          padding: 10px 16px;
+          color: #fff;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 13px;
+          transition: background 0.2s;
+          cursor: pointer;
+      }
+      .user-dropdown .dropdown-item:hover {
+          background: #2a2a2a;
+      }
+      .user-dropdown .dropdown-item i {
+          width: 20px;
+          color: #C5A059;
+      }
+      .user-dropdown .divider {
+          height: 1px;
+          background: #2a2a2a;
+          margin: 8px 0;
+      }
+      .discount-badge {
+          background: linear-gradient(135deg, #1a2a1a, #0d2a0d);
+          border-radius: 20px;
+          padding: 4px 10px;
+          font-size: 10px;
+          color: #C5A059;
+          display: inline-block;
+      }
+      
+      @media (max-width: 768px) {
+          .user-wrapper { top: 15px; left: 15px; }
+          .user-btn { padding: 8px 16px; font-size: 12px; }
+          .user-btn i { font-size: 16px; }
+          .user-dropdown { min-width: 220px; top: 48px; }
       }
 
       /* MODAL DEL CARRITO */
@@ -514,6 +616,124 @@
       .btn-whatsapp-checkout:hover {
           background: #128C7E;
       }
+      .discount-info {
+          background: #1a2a1a;
+          border-radius: 8px;
+          padding: 10px;
+          margin-bottom: 15px;
+          text-align: center;
+          font-size: 12px;
+          border: 1px solid #C5A059;
+      }
+      .discount-info i {
+          color: #C5A059;
+          margin-right: 5px;
+      }
+
+      /* MODAL LOGIN/REGISTRO */
+      .auth-modal .modal-content {
+          background: #1a1a1a;
+          border: 1px solid #C5A059;
+          border-radius: 16px;
+          color: #fff;
+      }
+      .auth-modal .modal-header {
+          border-bottom: 1px solid #2a2a2a;
+          padding: 15px 20px;
+      }
+      .auth-modal .modal-title {
+          color: #C5A059;
+          font-weight: 800;
+      }
+      .auth-modal .btn-close {
+          filter: invert(1);
+      }
+      .auth-tabs {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 20px;
+          border-bottom: 1px solid #2a2a2a;
+          padding-bottom: 10px;
+      }
+      .auth-tab {
+          flex: 1;
+          text-align: center;
+          padding: 8px;
+          cursor: pointer;
+          border-radius: 8px;
+          transition: all 0.3s;
+          color: #888;
+      }
+      .auth-tab.active {
+          background: #C5A059;
+          color: #000;
+          font-weight: bold;
+      }
+      .auth-form input {
+          width: 100%;
+          padding: 12px;
+          margin-bottom: 15px;
+          background: #0a0a0a;
+          border: 1px solid #333;
+          border-radius: 8px;
+          color: #fff;
+      }
+      .auth-form input:focus {
+          outline: none;
+          border-color: #C5A059;
+      }
+      .auth-btn {
+          width: 100%;
+          padding: 12px;
+          background: #C5A059;
+          border: none;
+          border-radius: 8px;
+          font-weight: bold;
+          color: #000;
+          margin-top: 10px;
+      }
+      .guest-btn {
+          width: 100%;
+          padding: 12px;
+          background: transparent;
+          border: 1px solid #333;
+          border-radius: 8px;
+          font-weight: bold;
+          color: #fff;
+          margin-top: 10px;
+      }
+      .benefits-list {
+          margin-top: 20px;
+          padding-top: 15px;
+          border-top: 1px solid #2a2a2a;
+          font-size: 12px;
+          color: #aaa;
+      }
+      .benefits-list i {
+          color: #C5A059;
+          margin-right: 8px;
+      }
+      .toast-notification {
+          position: fixed;
+          bottom: 30px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: #1a2a1a;
+          border: 1px solid #C5A059;
+          border-radius: 50px;
+          padding: 12px 24px;
+          color: #C5A059;
+          font-size: 13px;
+          font-weight: bold;
+          z-index: 10000;
+          display: none;
+          animation: fadeInUp 0.3s ease;
+          white-space: nowrap;
+      }
+      @keyframes fadeInUp {
+          from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+          to { opacity: 1; transform: translateX(-50%) translateY(0); }
+      }
 
       .redes-cremita-container { display: flex; flex-direction: column; gap: 15px; align-items: center; padding: 10px; }
       .btn-redes {
@@ -594,6 +814,18 @@
       </div>
    </header>
 
+   <!-- BOTÓN DE USUARIO (LOGIN/REGISTRO) - ESQUINA SUPERIOR IZQUIERDA -->
+   <div class="user-wrapper">
+      <div class="user-btn" id="userBtn">
+         <i class="fa fa-user-circle-o"></i>
+         <span id="userBtnText">Mi Cuenta</span>
+         <i class="fa fa-chevron-down" style="font-size: 12px;"></i>
+      </div>
+      <div class="user-dropdown" id="userDropdown">
+         <div id="dropdownContent"></div>
+      </div>
+   </div>
+
    <!-- CARRITO FLOTANTE - ESQUINA SUPERIOR DERECHA -->
    <div class="cart-wrapper">
       <div class="envio-gratis-msg">
@@ -603,6 +835,49 @@
          <i class="fa fa-shopping-cart"></i>
          <span>Carrito</span>
          <span id="cartCountBadge" class="cart-counter">0</span>
+      </div>
+   </div>
+
+   <!-- MODAL LOGIN/REGISTRO -->
+   <div class="modal fade auth-modal" id="authModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title"><i class="fa fa-user-circle-o"></i> Mi Cuenta</h5>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <div class="auth-tabs">
+                  <div class="auth-tab active" data-tab="login">🔓 INICIAR SESIÓN</div>
+                  <div class="auth-tab" data-tab="register">✨ REGISTRARME</div>
+               </div>
+               
+               <!-- FORMULARIO LOGIN -->
+               <div id="loginForm" class="auth-form">
+                  <input type="email" id="loginEmail" placeholder="📧 Correo electrónico" autocomplete="email">
+                  <input type="password" id="loginPassword" placeholder="🔒 Contraseña" autocomplete="current-password">
+                  <button class="auth-btn" onclick="iniciarSesion()">🔓 INICIAR SESIÓN</button>
+                  <button class="guest-btn" onclick="continuarComoInvitado()">🛒 SEGUIR COMO INVITADO</button>
+               </div>
+               
+               <!-- FORMULARIO REGISTRO -->
+               <div id="registerForm" class="auth-form" style="display: none;">
+                  <input type="text" id="regNombre" placeholder="👤 Nombre completo" autocomplete="name">
+                  <input type="email" id="regEmail" placeholder="📧 Correo electrónico" autocomplete="email">
+                  <input type="tel" id="regTelefono" placeholder="📱 Teléfono (opcional)" autocomplete="tel">
+                  <input type="password" id="regPassword" placeholder="🔒 Contraseña" autocomplete="new-password">
+                  <button class="auth-btn" onclick="registrarUsuario()">✨ REGISTRARME</button>
+                  <button class="guest-btn" onclick="continuarComoInvitado()">🛒 SEGUIR COMO INVITADO</button>
+               </div>
+               
+               <div class="benefits-list">
+                  <i class="fa fa-gift"></i> <strong>🎁 Beneficios de registrarte:</strong><br>
+                  <i class="fa fa-check-circle"></i> Guarda tu carrito para siempre<br>
+                  <i class="fa fa-check-circle"></i> Recibe ofertas exclusivas<br>
+                  <i class="fa fa-star"></i> <strong>📢 EN TU SEGUNDA COMPRA: 10% DESCUENTO</strong>
+               </div>
+            </div>
+         </div>
       </div>
    </div>
 
@@ -618,6 +893,7 @@
                <div class="social-proof">
                   🔥 Únete a los más de 60 clientes que ya brillan con nosotros
                </div>
+               <div id="cartDiscountInfo" class="discount-info" style="display: none;"></div>
                <div id="cartItemsList" class="cart-items-list"></div>
                <div id="shippingInfo">
                   <div class="shipping-bar">
@@ -631,6 +907,9 @@
          </div>
       </div>
    </div>
+
+   <!-- TOAST NOTIFICACIONES -->
+   <div id="toastMsg" class="toast-notification"></div>
 
    <section class="slider_section">
       <div class="container-fluid">
@@ -857,13 +1136,215 @@
       document.addEventListener('DOMContentLoaded', function() {
          contenedor.innerHTML = '<span class="cursor">|</span>';
          setTimeout(escribirTexto, 500);
-         actualizarCarritoUI(); // Cargar carrito guardado
+         actualizarCarritoUI();
+         actualizarUIUsuario();
       });
 
-      // ===== FUNCIONES DEL CARRITO (persistente con localStorage) =====
+      // ===== SISTEMA DE USUARIO =====
       const numeroWhatsApp = "573162132781";
       const ENVIO_GRATIS_MINIMO = 199999;
+      let usuarioActual = null;
       
+      function guardarUsuario(usuario) {
+         localStorage.setItem('cremitaUsuario', JSON.stringify(usuario));
+         usuarioActual = usuario;
+         actualizarUIUsuario();
+      }
+      
+      function obtenerUsuario() {
+         if (usuarioActual) return usuarioActual;
+         const usuario = localStorage.getItem('cremitaUsuario');
+         return usuario ? JSON.parse(usuario) : null;
+      }
+      
+      function actualizarUIUsuario() {
+         const usuario = obtenerUsuario();
+         const userBtnText = document.getElementById('userBtnText');
+         const dropdownContent = document.getElementById('dropdownContent');
+         
+         if (usuario) {
+            userBtnText.innerHTML = `Hola, ${usuario.nombre.split(' ')[0]}`;
+            
+            const descuentoActivo = usuario.contadorCompras >= 1;
+            
+            dropdownContent.innerHTML = `
+               <div class="user-info">
+                  <div class="user-name">✨ ${usuario.nombre}</div>
+                  <div class="user-email">${usuario.email}</div>
+                  <div class="user-compras">📦 Compras realizadas: ${usuario.contadorCompras}</div>
+                  ${descuentoActivo ? '<div class="discount-badge" style="margin-top:8px;">🎁 10% OFF en tu próxima compra</div>' : '<div class="discount-badge" style="margin-top:8px;">⭐ 1ra compra - Acumula para 10% OFF</div>'}
+               </div>
+               <div class="dropdown-item" onclick="verMisPedidos()"><i class="fa fa-history"></i> Mis pedidos</div>
+               <div class="dropdown-item" onclick="cerrarSesion()"><i class="fa fa-sign-out"></i> Cerrar sesión</div>
+            `;
+         } else {
+            userBtnText.innerHTML = `Mi Cuenta`;
+            dropdownContent.innerHTML = `
+               <div class="dropdown-item" onclick="abrirModalLogin()"><i class="fa fa-user-plus"></i> Iniciar sesión / Registrarse</div>
+               <div class="dropdown-item" onclick="continuarComoInvitado()"><i class="fa fa-shopping-cart"></i> Continuar como invitado</div>
+               <div class="divider"></div>
+               <div class="user-info" style="border-bottom: none;">
+                  <div class="discount-badge">🎁 10% DESCUENTO en 2da compra</div>
+               </div>
+            `;
+         }
+      }
+      
+      function abrirModalLogin() {
+         const modal = new bootstrap.Modal(document.getElementById('authModal'));
+         modal.show();
+      }
+      
+      function continuarComoInvitado() {
+         const modalElement = document.getElementById('authModal');
+         const modal = bootstrap.Modal.getInstance(modalElement);
+         if (modal) modal.hide();
+         mostrarToast('🛒 Continuarás como invitado. Puedes registrarte cuando quieras.');
+      }
+      
+      function registrarUsuario() {
+         const nombre = document.getElementById('regNombre')?.value.trim();
+         const email = document.getElementById('regEmail')?.value.trim();
+         const telefono = document.getElementById('regTelefono')?.value.trim();
+         const password = document.getElementById('regPassword')?.value;
+         
+         if (!nombre || !email || !password) {
+            mostrarToast('❌ Por favor completa nombre, email y contraseña');
+            return;
+         }
+         
+         if (password.length < 4) {
+            mostrarToast('❌ La contraseña debe tener al menos 4 caracteres');
+            return;
+         }
+         
+         const usuariosRegistrados = JSON.parse(localStorage.getItem('cremitaUsuarios') || '[]');
+         if (usuariosRegistrados.find(u => u.email === email)) {
+            mostrarToast('❌ Este email ya está registrado. Inicia sesión.');
+            return;
+         }
+         
+         const nuevoUsuario = {
+            id: Date.now().toString(),
+            nombre: nombre,
+            email: email,
+            telefono: telefono || '',
+            password: password,
+            contadorCompras: 0,
+            fechaRegistro: new Date().toISOString()
+         };
+         
+         usuariosRegistrados.push(nuevoUsuario);
+         localStorage.setItem('cremitaUsuarios', JSON.stringify(usuariosRegistrados));
+         
+         const usuarioSesion = {
+            id: nuevoUsuario.id,
+            nombre: nuevoUsuario.nombre,
+            email: nuevoUsuario.email,
+            telefono: nuevoUsuario.telefono,
+            contadorCompras: nuevoUsuario.contadorCompras
+         };
+         guardarUsuario(usuarioSesion);
+         
+         const modalElement = document.getElementById('authModal');
+         const modal = bootstrap.Modal.getInstance(modalElement);
+         if (modal) modal.hide();
+         
+         mostrarToast(`🎉 ¡Bienvenido ${nombre}! En tu SEGUNDA compra tienes 10% DESCUENTO ✨`);
+         
+         setTimeout(() => {
+            location.reload();
+         }, 1500);
+      }
+      
+      function iniciarSesion() {
+         const email = document.getElementById('loginEmail')?.value.trim();
+         const password = document.getElementById('loginPassword')?.value;
+         
+         if (!email || !password) {
+            mostrarToast('❌ Por favor ingresa email y contraseña');
+            return;
+         }
+         
+         const usuariosRegistrados = JSON.parse(localStorage.getItem('cremitaUsuarios') || '[]');
+         const usuario = usuariosRegistrados.find(u => u.email === email && u.password === password);
+         
+         if (!usuario) {
+            mostrarToast('❌ Email o contraseña incorrectos');
+            return;
+         }
+         
+         const usuarioSesion = {
+            id: usuario.id,
+            nombre: usuario.nombre,
+            email: usuario.email,
+            telefono: usuario.telefono,
+            contadorCompras: usuario.contadorCompras
+         };
+         guardarUsuario(usuarioSesion);
+         
+         const modalElement = document.getElementById('authModal');
+         const modal = bootstrap.Modal.getInstance(modalElement);
+         if (modal) modal.hide();
+         
+         if (usuario.contadorCompras >= 1) {
+            mostrarToast(`🎉 ¡Bienvenido de vuelta ${usuario.nombre}! Recuerda que tienes 10% OFF en tu próxima compra ✨`);
+         } else {
+            mostrarToast(`🎉 ¡Bienvenido ${usuario.nombre}! En tu SEGUNDA compra tienes 10% DESCUENTO ✨`);
+         }
+         
+         setTimeout(() => {
+            location.reload();
+         }, 1500);
+      }
+      
+      function cerrarSesion() {
+         localStorage.removeItem('cremitaUsuario');
+         usuarioActual = null;
+         actualizarUIUsuario();
+         mostrarToast('🔓 Has cerrado sesión correctamente');
+         setTimeout(() => {
+            location.reload();
+         }, 1000);
+      }
+      
+      function verMisPedidos() {
+         mostrarToast('📦 Próximamente podrás ver tu historial de pedidos');
+      }
+      
+      function mostrarToast(mensaje) {
+         const toast = document.getElementById('toastMsg');
+         toast.textContent = mensaje;
+         toast.style.display = 'block';
+         setTimeout(() => {
+            toast.style.display = 'none';
+         }, 3000);
+      }
+      
+      // Tabs en modal de autenticación
+      document.querySelectorAll('.auth-tab').forEach(tab => {
+         tab.addEventListener('click', function() {
+            document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            const tabName = this.getAttribute('data-tab');
+            document.getElementById('loginForm').style.display = tabName === 'login' ? 'block' : 'none';
+            document.getElementById('registerForm').style.display = tabName === 'register' ? 'block' : 'none';
+         });
+      });
+      
+      // Dropdown usuario
+      const userBtn = document.getElementById('userBtn');
+      const userDropdown = document.getElementById('userDropdown');
+      userBtn.addEventListener('click', (e) => {
+         e.stopPropagation();
+         userDropdown.classList.toggle('show');
+      });
+      document.addEventListener('click', () => {
+         userDropdown.classList.remove('show');
+      });
+      userDropdown.addEventListener('click', (e) => e.stopPropagation());
+
+      // ===== FUNCIONES DEL CARRITO =====
       function obtenerCarrito() {
          let carrito = localStorage.getItem('cremitaCarrito');
          return carrito ? JSON.parse(carrito) : [];
@@ -887,6 +1368,7 @@
             container.innerHTML = '<div class="text-center py-4">🛒 Tu carrito está vacío</div>';
             document.getElementById('cartTotal').innerHTML = '';
             document.getElementById('shippingInfo').style.display = 'none';
+            document.getElementById('cartDiscountInfo').style.display = 'none';
             return;
          }
          
@@ -916,11 +1398,25 @@
          
          container.innerHTML = html;
          
-         const falta = ENVIO_GRATIS_MINIMO - total;
-         let shippingText = '';
-         let progressPercent = Math.min((total / ENVIO_GRATIS_MINIMO) * 100, 100);
+         const usuario = obtenerUsuario();
+         let descuentoAplicado = false;
+         let descuentoPorcentaje = 0;
          
-         if (total >= ENVIO_GRATIS_MINIMO) {
+         if (usuario && usuario.contadorCompras >= 1) {
+            descuentoAplicado = true;
+            descuentoPorcentaje = 10;
+         }
+         
+         let totalConDescuento = total;
+         if (descuentoAplicado) {
+            totalConDescuento = total * (1 - descuentoPorcentaje / 100);
+         }
+         
+         const falta = ENVIO_GRATIS_MINIMO - totalConDescuento;
+         let shippingText = '';
+         let progressPercent = Math.min((totalConDescuento / ENVIO_GRATIS_MINIMO) * 100, 100);
+         
+         if (totalConDescuento >= ENVIO_GRATIS_MINIMO) {
             shippingText = '🎉 ¡ENVÍO GRATIS! 🎉';
          } else {
             shippingText = `💸 Faltan $${falta.toLocaleString()} para obtener ENVÍO GRATIS`;
@@ -929,10 +1425,20 @@
          const shippingProgress = document.getElementById('shippingProgress');
          const shippingTextEl = document.getElementById('shippingText');
          const cartTotalEl = document.getElementById('cartTotal');
+         const discountInfoEl = document.getElementById('cartDiscountInfo');
          
          if (shippingProgress) shippingProgress.style.width = progressPercent + '%';
          if (shippingTextEl) shippingTextEl.innerHTML = shippingText;
-         if (cartTotalEl) cartTotalEl.innerHTML = `Total: $${total.toLocaleString()}`;
+         
+         if (descuentoAplicado) {
+            discountInfoEl.style.display = 'block';
+            discountInfoEl.innerHTML = `<i class="fa fa-star"></i> 🎉 ¡Por ser tu SEGUNDA compra! 10% DESCUENTO aplicado automáticamente 🎉<br>
+            <small>Total original: $${total.toLocaleString()} | Descuento: -$${(total * 0.1).toLocaleString()}</small>`;
+            if (cartTotalEl) cartTotalEl.innerHTML = `Total con descuento: $${totalConDescuento.toLocaleString()}`;
+         } else {
+            discountInfoEl.style.display = 'none';
+            if (cartTotalEl) cartTotalEl.innerHTML = `Total: $${total.toLocaleString()}`;
+         }
       }
       
       function cambiarCantidad(index, delta) {
@@ -955,7 +1461,7 @@
       document.getElementById('checkoutBtn')?.addEventListener('click', function() {
          const carrito = obtenerCarrito();
          if (carrito.length === 0) {
-            alert('🛒 Tu carrito está vacío. Agrega algunos productos primero.');
+            mostrarToast('🛒 Tu carrito está vacío. Agrega algunos productos primero.');
             return;
          }
          
@@ -968,20 +1474,46 @@
             productosLista += `• ${item.nombre}${medidaText} x${item.cantidad} = $${subtotal.toLocaleString()}\n`;
          });
          
-         const envioGratis = total >= ENVIO_GRATIS_MINIMO;
+         const usuario = obtenerUsuario();
+         let descuentoAplicado = false;
+         let totalConDescuento = total;
+         
+         if (usuario && usuario.contadorCompras >= 1) {
+            descuentoAplicado = true;
+            totalConDescuento = total * 0.9;
+         }
+         
+         const envioGratis = totalConDescuento >= ENVIO_GRATIS_MINIMO;
          const metodoPago = envioGratis ? "ENVÍO GRATIS" : "Pago contra entrega (+$10.000)";
          
          let mensaje = `✨ *NUEVO PEDIDO - CREMITA JOYERÍA* ✨\n\n`;
+         if (usuario) mensaje += `👤 *Cliente:* ${usuario.nombre}\n📧 ${usuario.email}\n\n`;
          mensaje += `📦 *PRODUCTOS:*\n${productosLista}\n`;
          mensaje += `💰 *SUBTOTAL:* $${total.toLocaleString()}\n`;
+         if (descuentoAplicado) mensaje += `🎁 *DESCUENTO 10% 2DA COMPRA:* -$${(total * 0.1).toLocaleString()}\n`;
          mensaje += `🚚 *ENVÍO:* ${envioGratis ? 'GRATIS 🎉' : 'Pago contra entrega (+$10.000)'}\n`;
-         if (!envioGratis) total += 10000;
-         mensaje += `💎 *TOTAL A PAGAR:* $${total.toLocaleString()}\n\n`;
+         let totalFinal = totalConDescuento;
+         if (!envioGratis) totalFinal += 10000;
+         mensaje += `💎 *TOTAL A PAGAR:* $${totalFinal.toLocaleString()}\n\n`;
          mensaje += `📋 *MÉTODO DE PAGO:* ${metodoPago}\n`;
          mensaje += `🔥 *CLIENTES FELICES:* Más de 60 personas ya brillan con nosotros.\n\n`;
          mensaje += `¡Gracias por elegir Cremita Joyería! 💛`;
          
          window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`, '_blank');
+         
+         if (usuario) {
+            const usuariosRegistrados = JSON.parse(localStorage.getItem('cremitaUsuarios') || '[]');
+            const userIndex = usuariosRegistrados.findIndex(u => u.id === usuario.id);
+            if (userIndex !== -1) {
+               usuariosRegistrados[userIndex].contadorCompras += 1;
+               localStorage.setItem('cremitaUsuarios', JSON.stringify(usuariosRegistrados));
+               usuario.contadorCompras = usuariosRegistrados[userIndex].contadorCompras;
+               guardarUsuario(usuario);
+            }
+         }
+         
+         localStorage.removeItem('cremitaCarrito');
+         actualizarCarritoUI();
       });
       
       function enviarWhatsAppGeneral() {
@@ -989,10 +1521,16 @@
          return false;
       }
       
-      // Exponer funciones globalmente para que funcionen los botones del modal
+      // Exponer funciones globalmente
       window.cambiarCantidad = cambiarCantidad;
       window.eliminarItem = eliminarItem;
       window.enviarWhatsAppGeneral = enviarWhatsAppGeneral;
+      window.registrarUsuario = registrarUsuario;
+      window.iniciarSesion = iniciarSesion;
+      window.continuarComoInvitado = continuarComoInvitado;
+      window.cerrarSesion = cerrarSesion;
+      window.verMisPedidos = verMisPedidos;
+      window.abrirModalLogin = abrirModalLogin;
    </script>
    <script src="js/parallax.js"></script>
    <script src="js/animate.js"></script>

@@ -32,7 +32,7 @@
       .logo-animado {
           text-align: center;
           padding: 20px 0;
-          min-height: 140px;
+          min-height: auto;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -94,17 +94,17 @@
       }
       
       @media (max-width: 768px) {
-          .texto-animado { font-size: 28px; letter-spacing: 2px; }
-          .estrella-icono { font-size: 28px; }
-          .logo-animado { min-height: 100px; padding: 15px 0; }
-          .linea-base.visible { width: 220px; }
+          .texto-animado { font-size: 32px; letter-spacing: 2px; }
+          .estrella-icono { font-size: 32px; }
+          .logo-animado { padding: 15px 0; }
+          .linea-base.visible { width: 240px; }
       }
 
       .innerpage_banner {
           background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('images/inner_banner.jpg') !important;
           background-size: cover !important;
           background-position: center !important;
-          padding: 80px 0 !important;
+          padding: 60px 0 !important;
           text-align: center;
           border-bottom: 3px solid #C5A059 !important;
       }
@@ -122,7 +122,7 @@
       }
 
       @media (max-width: 576px) {
-         .innerpage_banner { padding: 50px 0 !important; }
+         .innerpage_banner { padding: 40px 0 !important; }
          .page_title h2 span { letter-spacing: 2px !important; }
       }
 
@@ -130,7 +130,7 @@
           background: linear-gradient(135deg, #1a1400, #2a1f00, #1a1400);
           border-top: 2px solid #C5A059;
           border-bottom: 2px solid #C5A059;
-          padding: 15px 0;
+          padding: 12px 0;
       }
       .banner_confianza .item_confianza {
           display: flex;
@@ -274,169 +274,125 @@
          .btn_carrito { font-size: 13px; padding: 12px; }
       }
 
-      /* ===== BOTÓN FLOTANTE DEL CARRITO ===== */
+      /* ===== BOTONES FLOTANTES - SOLO ÍCONOS, SIN TEXTO ===== */
       .cart-wrapper {
           position: fixed;
-          top: 25px;
-          right: 25px;
+          top: 15px;
+          right: 15px;
           z-index: 9998;
           display: flex;
           flex-direction: column;
           align-items: flex-end;
-          gap: 10px;
+          gap: 5px;
       }
       .cart-floating-btn {
-          background: #C5A059;
-          border: none;
-          border-radius: 60px;
-          padding: 10px 22px;
+          background: transparent !important;
+          border: none !important;
+          padding: 0 !important;
           display: flex;
           align-items: center;
-          gap: 12px;
+          gap: 3px;
           cursor: pointer;
-          box-shadow: 0 4px 15px rgba(197,160,89,0.4);
-          transition: all 0.3s ease;
-          font-weight: bold;
-          color: #000;
-          font-size: 14px;
-      }
-      .cart-floating-btn:hover {
-          transform: scale(1.05);
-          background: #f0c97a;
+          transition: all 0.2s ease;
+          font-weight: normal;
+          color: #C5A059;
+          font-size: 0;
+          box-shadow: none !important;
       }
       .cart-floating-btn i {
-          font-size: 20px;
+          font-size: 22px;
+          color: #C5A059;
+      }
+      .cart-floating-btn span {
+          display: none;
       }
       .cart-counter {
           background-color: #e63946;
           color: white;
           border-radius: 50%;
-          width: 20px;
-          height: 20px;
+          width: 18px;
+          height: 18px;
           display: inline-flex;
           align-items: center;
           justify-content: center;
           font-size: 10px;
           font-weight: bold;
-          margin-left: 5px;
+          margin-left: 2px;
       }
-      .envio-gratis-msg {
-          background: linear-gradient(135deg, #1a2a1a, #0d2a0d);
-          border: 1px solid #C5A059;
-          border-radius: 50px;
-          padding: 6px 16px;
-          font-size: 11px;
-          font-weight: bold;
-          color: #C5A059;
-          white-space: nowrap;
-          box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-          animation: pulse 1.5s ease infinite;
-      }
-      .envio-gratis-msg i {
-          margin-right: 5px;
-          color: #C5A059;
-      }
-      @keyframes pulse {
-          0%, 100% { transform: scale(1); opacity: 0.9; }
-          50% { transform: scale(1.02); opacity: 1; }
-      }
-      
-      @media (max-width: 768px) {
-          .cart-wrapper {
-              top: 15px;
-              right: 15px;
-              gap: 8px;
-          }
-          .cart-floating-btn {
-              padding: 8px 16px;
-              font-size: 12px;
-          }
-          .cart-floating-btn i {
-              font-size: 16px;
-          }
-          .cart-counter {
-              width: 18px;
-              height: 18px;
-              font-size: 9px;
-          }
-          .envio-gratis-msg {
-              font-size: 9px;
-              padding: 4px 12px;
-          }
+      .cart-counter.hidden {
+          display: none;
       }
 
-      /* ===== BOTÓN DE USUARIO (LOGIN/REGISTRO) ESQUINA SUPERIOR IZQUIERDA ===== */
       .user-wrapper {
           position: fixed;
-          top: 25px;
-          left: 25px;
+          top: 15px;
+          left: 15px;
           z-index: 9999;
       }
       .user-btn {
-          background: #C5A059;
-          border: none;
-          border-radius: 60px;
-          padding: 10px 20px;
+          background: transparent !important;
+          border: none !important;
+          padding: 0 !important;
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 3px;
           cursor: pointer;
-          box-shadow: 0 4px 15px rgba(197,160,89,0.4);
-          transition: all 0.3s ease;
-          font-weight: bold;
-          color: #000;
-          font-size: 14px;
-      }
-      .user-btn:hover {
-          transform: scale(1.05);
-          background: #f0c97a;
+          transition: all 0.2s ease;
+          font-weight: normal;
+          color: #C5A059;
+          font-size: 0;
+          box-shadow: none !important;
       }
       .user-btn i {
-          font-size: 18px;
+          font-size: 20px;
+          color: #C5A059;
+      }
+      .user-btn span {
+          display: none;
       }
       .user-dropdown {
           position: absolute;
-          top: 55px;
+          top: 28px;
           left: 0;
           background: #1a1a1a;
           border: 1px solid #C5A059;
-          border-radius: 16px;
-          min-width: 260px;
-          padding: 12px 0;
+          border-radius: 12px;
+          min-width: 200px;
+          padding: 8px 0;
           display: none;
           z-index: 10000;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+          box-shadow: 0 8px 20px rgba(0,0,0,0.4);
       }
       .user-dropdown.show {
           display: block;
       }
       .user-dropdown .user-info {
-          padding: 10px 16px;
+          padding: 8px 12px;
           border-bottom: 1px solid #2a2a2a;
-          margin-bottom: 8px;
+          margin-bottom: 5px;
       }
       .user-dropdown .user-name {
           color: #C5A059;
           font-weight: bold;
-          font-size: 14px;
+          font-size: 12px;
       }
       .user-dropdown .user-email {
           color: #888;
-          font-size: 11px;
+          font-size: 10px;
       }
       .user-dropdown .user-compras {
           color: #C5A059;
-          font-size: 11px;
-          margin-top: 5px;
+          font-size: 10px;
+          margin-top: 4px;
       }
       .user-dropdown .dropdown-item {
-          padding: 10px 16px;
+          padding: 8px 12px;
           color: #fff;
           text-decoration: none;
           display: flex;
           align-items: center;
-          gap: 10px;
-          font-size: 13px;
+          gap: 8px;
+          font-size: 11px;
           transition: background 0.2s;
           cursor: pointer;
       }
@@ -444,28 +400,30 @@
           background: #2a2a2a;
       }
       .user-dropdown .dropdown-item i {
-          width: 20px;
+          width: 16px;
           color: #C5A059;
+          font-size: 11px;
       }
       .user-dropdown .divider {
           height: 1px;
           background: #2a2a2a;
-          margin: 8px 0;
+          margin: 5px 0;
       }
       .discount-badge {
           background: linear-gradient(135deg, #1a2a1a, #0d2a0d);
           border-radius: 20px;
-          padding: 4px 10px;
-          font-size: 10px;
+          padding: 3px 8px;
+          font-size: 9px;
           color: #C5A059;
           display: inline-block;
       }
-      
-      @media (max-width: 768px) {
-          .user-wrapper { top: 15px; left: 15px; }
-          .user-btn { padding: 8px 16px; font-size: 12px; }
-          .user-btn i { font-size: 16px; }
-          .user-dropdown { min-width: 220px; top: 48px; }
+
+      @media (min-width: 768px) {
+          .cart-wrapper { top: 20px; right: 20px; }
+          .cart-floating-btn i { font-size: 24px; }
+          .user-wrapper { top: 20px; left: 20px; }
+          .user-btn i { font-size: 22px; }
+          .user-dropdown { top: 32px; min-width: 220px; }
       }
 
       /* MODAL DEL CARRITO */
@@ -477,25 +435,25 @@
       }
       .cart-modal .modal-header {
           border-bottom: 1px solid #2a2a2a;
-          padding: 15px 20px;
+          padding: 12px 16px;
       }
       .cart-modal .modal-title {
           color: #C5A059;
           font-weight: 800;
-          font-size: 1.3rem;
+          font-size: 1.1rem;
       }
       .cart-modal .btn-close {
           filter: invert(1);
       }
       .cart-items-list {
-          max-height: 400px;
+          max-height: 350px;
           overflow-y: auto;
       }
       .cart-item {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 12px 0;
+          padding: 10px 0;
           border-bottom: 1px solid #2a2a2a;
       }
       .cart-item-info {
@@ -503,26 +461,27 @@
       }
       .cart-item-name {
           font-weight: bold;
-          font-size: 14px;
+          font-size: 13px;
       }
       .cart-item-price {
           color: #C5A059;
-          font-size: 13px;
+          font-size: 12px;
       }
       .cart-item-quantity {
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 8px;
       }
       .quantity-btn {
           background: #C5A059;
           border: none;
           border-radius: 50%;
-          width: 28px;
-          height: 28px;
+          width: 24px;
+          height: 24px;
           font-weight: bold;
           cursor: pointer;
           transition: 0.2s;
+          font-size: 12px;
       }
       .quantity-btn:hover {
           background: #f0c97a;
@@ -532,21 +491,21 @@
           border: none;
           color: #e63946;
           cursor: pointer;
-          font-size: 18px;
-          margin-left: 10px;
+          font-size: 16px;
+          margin-left: 8px;
       }
       .cart-total {
           text-align: right;
-          font-size: 1.2rem;
-          margin-top: 15px;
-          padding-top: 15px;
+          font-size: 1.1rem;
+          margin-top: 12px;
+          padding-top: 12px;
           border-top: 2px solid #C5A059;
       }
       .shipping-bar {
           background: #2a2a2a;
           border-radius: 10px;
-          height: 10px;
-          margin: 10px 0;
+          height: 8px;
+          margin: 8px 0;
           overflow: hidden;
       }
       .shipping-progress {
@@ -557,21 +516,22 @@
       }
       .social-proof {
           background: #2a2a2a;
-          padding: 10px;
+          padding: 8px;
           border-radius: 8px;
           text-align: center;
-          margin-bottom: 15px;
-          font-size: 13px;
+          margin-bottom: 12px;
+          font-size: 11px;
       }
       .btn-whatsapp-checkout {
           background: #25D366;
           color: white;
           width: 100%;
-          padding: 12px;
+          padding: 10px;
           border-radius: 8px;
           font-weight: bold;
           border: none;
-          margin-top: 15px;
+          margin-top: 12px;
+          font-size: 13px;
       }
       .btn-whatsapp-checkout:hover {
           background: #128C7E;
@@ -579,15 +539,11 @@
       .discount-info {
           background: #1a2a1a;
           border-radius: 8px;
-          padding: 10px;
-          margin-bottom: 15px;
+          padding: 8px;
+          margin-bottom: 12px;
           text-align: center;
-          font-size: 12px;
+          font-size: 11px;
           border: 1px solid #C5A059;
-      }
-      .discount-info i {
-          color: #C5A059;
-          margin-right: 5px;
       }
 
       /* MODAL LOGIN/REGISTRO */
@@ -599,30 +555,32 @@
       }
       .auth-modal .modal-header {
           border-bottom: 1px solid #2a2a2a;
-          padding: 15px 20px;
+          padding: 12px 16px;
       }
       .auth-modal .modal-title {
           color: #C5A059;
           font-weight: 800;
+          font-size: 1rem;
       }
       .auth-modal .btn-close {
           filter: invert(1);
       }
       .auth-tabs {
           display: flex;
-          gap: 10px;
-          margin-bottom: 20px;
+          gap: 8px;
+          margin-bottom: 15px;
           border-bottom: 1px solid #2a2a2a;
-          padding-bottom: 10px;
+          padding-bottom: 8px;
       }
       .auth-tab {
           flex: 1;
           text-align: center;
-          padding: 8px;
+          padding: 6px;
           cursor: pointer;
           border-radius: 8px;
           transition: all 0.3s;
           color: #888;
+          font-size: 13px;
       }
       .auth-tab.active {
           background: #C5A059;
@@ -631,12 +589,13 @@
       }
       .auth-form input {
           width: 100%;
-          padding: 12px;
-          margin-bottom: 15px;
+          padding: 10px;
+          margin-bottom: 12px;
           background: #0a0a0a;
           border: 1px solid #333;
           border-radius: 8px;
           color: #fff;
+          font-size: 13px;
       }
       .auth-form input:focus {
           outline: none;
@@ -644,46 +603,48 @@
       }
       .auth-btn {
           width: 100%;
-          padding: 12px;
+          padding: 10px;
           background: #C5A059;
           border: none;
           border-radius: 8px;
           font-weight: bold;
           color: #000;
-          margin-top: 10px;
+          margin-top: 8px;
+          font-size: 13px;
       }
       .guest-btn {
           width: 100%;
-          padding: 12px;
+          padding: 10px;
           background: transparent;
           border: 1px solid #333;
           border-radius: 8px;
           font-weight: bold;
           color: #fff;
-          margin-top: 10px;
+          margin-top: 8px;
+          font-size: 13px;
       }
       .benefits-list {
-          margin-top: 20px;
-          padding-top: 15px;
+          margin-top: 15px;
+          padding-top: 12px;
           border-top: 1px solid #2a2a2a;
-          font-size: 12px;
+          font-size: 11px;
           color: #aaa;
       }
       .benefits-list i {
           color: #C5A059;
-          margin-right: 8px;
+          margin-right: 6px;
       }
       .toast-notification {
           position: fixed;
-          bottom: 30px;
+          bottom: 20px;
           left: 50%;
           transform: translateX(-50%);
           background: #1a2a1a;
           border: 1px solid #C5A059;
-          border-radius: 50px;
-          padding: 12px 24px;
+          border-radius: 40px;
+          padding: 10px 20px;
           color: #C5A059;
-          font-size: 13px;
+          font-size: 12px;
           font-weight: bold;
           z-index: 10000;
           display: none;
@@ -763,18 +724,18 @@
       }
       .modal-cremita .modal-header {
           border-bottom: 1px solid #2a2a2a;
-          padding: 15px 20px;
+          padding: 12px 16px;
       }
       .modal-cremita .modal-title {
           color: #C5A059;
           font-weight: 800;
-          font-size: 1.1rem;
+          font-size: 1rem;
       }
       .modal-cremita .btn-close {
           filter: invert(1);
       }
       .modal-cremita .modal-body {
-          padding: 20px;
+          padding: 16px;
       }
       .caract_item {
           display: flex;
@@ -833,10 +794,10 @@
       }
       .close-modal:hover { color: #fff; }
 
-      .redes-cremita-container { display: flex; flex-direction: column; gap: 10px; align-items: center; padding: 5px; }
+      .redes-cremita-container { display: flex; flex-direction: column; gap: 8px; align-items: center; padding: 5px; }
       .btn-redes { 
-         width: 45px; 
-         height: 45px; 
+         width: 40px; 
+         height: 40px; 
          border-radius: 50%; 
          display: flex; 
          justify-content: center; 
@@ -847,32 +808,32 @@
          background: #1a1a1a; 
          border: 1px solid #C5A059; 
       }
-      .btn-redes i, .btn-redes svg { font-size: 22px; width: 20px; fill: #C5A059; color: #C5A059; }
+      .btn-redes i, .btn-redes svg { font-size: 20px; width: 18px; fill: #C5A059; color: #C5A059; }
       .btn-redes.wa:hover { background: #25D366; border-color: #25D366; transform: rotate(360deg) scale(1.1); }
       .btn-redes.tt:hover { background: #000; border-color: #fff; transform: scale(1.1); }
       .btn-redes.ig:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); transform: scale(1.1); }
       .btn-redes:hover i, .btn-redes:hover svg { color: white; fill: white; }
       .tooltip-redes { 
          position: absolute; 
-         right: 55px; 
+         right: 50px; 
          background: #C5A059; 
          color: black; 
-         padding: 4px 10px; 
+         padding: 4px 8px; 
          border-radius: 5px; 
-         font-size: 10px; 
+         font-size: 9px; 
          font-weight: bold; 
          opacity: 0; 
          visibility: hidden; 
          transition: all 0.3s ease; 
          white-space: nowrap; 
       }
-      .btn-redes:hover .tooltip-redes { opacity: 1; visibility: visible; right: 50px; }
+      .btn-redes:hover .tooltip-redes { opacity: 1; visibility: visible; right: 45px; }
 
       @media (min-width: 768px) {
-         .btn-redes { width: 55px; height: 55px; }
-         .btn-redes i, .btn-redes svg { font-size: 26px; width: 24px; }
-         .tooltip-redes { right: 70px; font-size: 12px; }
-         .btn-redes:hover .tooltip-redes { right: 65px; }
+         .btn-redes { width: 50px; height: 50px; }
+         .btn-redes i, .btn-redes svg { font-size: 24px; width: 22px; }
+         .tooltip-redes { right: 65px; font-size: 11px; }
+         .btn-redes:hover .tooltip-redes { right: 60px; }
       }
    </style>
 </head>
@@ -902,8 +863,8 @@
                <div class="col-md-12">
                   <nav class="navbar navbar-expand-md navbar-dark">
                      <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#cloapediamenu"
-                        style="border-color: #C5A059; padding: 8px 12px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#C5A059" viewBox="0 0 16 16">
+                        style="border-color: #C5A059; padding: 6px 10px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#C5A059" viewBox="0 0 16 16">
                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                         </svg>
                      </button>
@@ -920,27 +881,23 @@
       </div>
    </header>
 
-   <!-- BOTÓN DE USUARIO (LOGIN/REGISTRO) - ESQUINA SUPERIOR IZQUIERDA -->
+   <!-- BOTÓN DE USUARIO - SOLO ÍCONO -->
    <div class="user-wrapper">
       <div class="user-btn" id="userBtn">
          <i class="fa fa-user-circle-o"></i>
-         <span id="userBtnText">Mi Cuenta</span>
-         <i class="fa fa-chevron-down" style="font-size: 12px;"></i>
+         <span></span>
       </div>
       <div class="user-dropdown" id="userDropdown">
          <div id="dropdownContent"></div>
       </div>
    </div>
 
-   <!-- CARRITO FLOTANTE -->
+   <!-- CARRITO FLOTANTE - SOLO ÍCONO -->
    <div class="cart-wrapper">
-      <div class="envio-gratis-msg">
-         <i class="fa fa-truck"></i> 🎁 Envío GRATIS en compras +$199.999
-      </div>
       <div class="cart-floating-btn" id="cartFloatingBtn" data-bs-toggle="modal" data-bs-target="#cartModal">
          <i class="fa fa-shopping-cart"></i>
-         <span>Carrito</span>
-         <span id="cartCountBadge" class="cart-counter">0</span>
+         <span></span>
+         <span id="cartCountBadge" class="cart-counter hidden">0</span>
       </div>
    </div>
 
@@ -958,7 +915,6 @@
                   <div class="auth-tab" data-tab="register">✨ REGISTRARME</div>
                </div>
                
-               <!-- FORMULARIO LOGIN -->
                <div id="loginForm" class="auth-form">
                   <input type="email" id="loginEmail" placeholder="📧 Correo electrónico" autocomplete="email">
                   <input type="password" id="loginPassword" placeholder="🔒 Contraseña" autocomplete="current-password">
@@ -966,7 +922,6 @@
                   <button class="guest-btn" onclick="continuarComoInvitado()">🛒 SEGUIR COMO INVITADO</button>
                </div>
                
-               <!-- FORMULARIO REGISTRO -->
                <div id="registerForm" class="auth-form" style="display: none;">
                   <input type="text" id="regNombre" placeholder="👤 Nombre completo" autocomplete="name">
                   <input type="email" id="regEmail" placeholder="📧 Correo electrónico" autocomplete="email">
@@ -1005,7 +960,7 @@
                   <div class="shipping-bar">
                      <div id="shippingProgress" class="shipping-progress"></div>
                   </div>
-                  <p id="shippingText" style="font-size: 12px; text-align: center;"></p>
+                  <p id="shippingText" style="font-size: 11px; text-align: center;"></p>
                </div>
                <div id="cartTotal" class="cart-total"></div>
                <button id="checkoutBtn" class="btn-whatsapp-checkout"><i class="fa fa-whatsapp"></i> Finalizar Pedido</button>
@@ -1354,33 +1309,29 @@
    
    function actualizarUIUsuario() {
       const usuario = obtenerUsuario();
-      const userBtnText = document.getElementById('userBtnText');
+      const userBtn = document.getElementById('userBtn');
       const dropdownContent = document.getElementById('dropdownContent');
       
       if (usuario) {
-         userBtnText.innerHTML = `Hola, ${usuario.nombre.split(' ')[0]}`;
-         
-         const comprasRestantes = usuario.contadorCompras >= 1 ? 0 : 1;
-         const descuentoActivo = usuario.contadorCompras >= 1;
-         
+         userBtn.setAttribute('title', `Hola, ${usuario.nombre}`);
          dropdownContent.innerHTML = `
             <div class="user-info">
                <div class="user-name">✨ ${usuario.nombre}</div>
                <div class="user-email">${usuario.email}</div>
-               <div class="user-compras">📦 Compras realizadas: ${usuario.contadorCompras}</div>
-               ${descuentoActivo ? '<div class="discount-badge" style="margin-top:8px;">🎁 10% OFF en tu próxima compra</div>' : '<div class="discount-badge" style="margin-top:8px;">⭐ 1ra compra - Acumula para 10% OFF</div>'}
+               <div class="user-compras">📦 Compras: ${usuario.contadorCompras}</div>
+               ${usuario.contadorCompras >= 1 ? '<div class="discount-badge" style="margin-top:6px;">🎁 10% OFF próxima compra</div>' : '<div class="discount-badge" style="margin-top:6px;">⭐ 1ra compra → 10% OFF en 2da</div>'}
             </div>
             <div class="dropdown-item" onclick="verMisPedidos()"><i class="fa fa-history"></i> Mis pedidos</div>
             <div class="dropdown-item" onclick="cerrarSesion()"><i class="fa fa-sign-out"></i> Cerrar sesión</div>
          `;
       } else {
-         userBtnText.innerHTML = `Mi Cuenta`;
+         userBtn.setAttribute('title', 'Mi Cuenta');
          dropdownContent.innerHTML = `
-            <div class="dropdown-item" onclick="abrirModalLogin()"><i class="fa fa-user-plus"></i> Iniciar sesión / Registrarse</div>
-            <div class="dropdown-item" onclick="continuarComoInvitado()"><i class="fa fa-shopping-cart"></i> Continuar como invitado</div>
+            <div class="dropdown-item" onclick="abrirModalLogin()"><i class="fa fa-user-plus"></i> Iniciar sesión</div>
+            <div class="dropdown-item" onclick="continuarComoInvitado()"><i class="fa fa-shopping-cart"></i> Invitado</div>
             <div class="divider"></div>
             <div class="user-info" style="border-bottom: none;">
-               <div class="discount-badge">🎁 10% DESCUENTO en 2da compra</div>
+               <div class="discount-badge">🎁 10% OFF en 2da compra</div>
             </div>
          `;
       }
@@ -1395,7 +1346,7 @@
       const modalElement = document.getElementById('authModal');
       const modal = bootstrap.Modal.getInstance(modalElement);
       if (modal) modal.hide();
-      mostrarToast('🛒 Continuarás como invitado. Puedes registrarte cuando quieras.');
+      mostrarToast('🛒 Continuarás como invitado');
    }
    
    function registrarUsuario() {
@@ -1405,18 +1356,17 @@
       const password = document.getElementById('regPassword')?.value;
       
       if (!nombre || !email || !password) {
-         mostrarToast('❌ Por favor completa nombre, email y contraseña');
+         mostrarToast('❌ Completa nombre, email y contraseña');
          return;
       }
-      
       if (password.length < 4) {
-         mostrarToast('❌ La contraseña debe tener al menos 4 caracteres');
+         mostrarToast('❌ Contraseña: mínimo 4 caracteres');
          return;
       }
       
       const usuariosRegistrados = JSON.parse(localStorage.getItem('cremitaUsuarios') || '[]');
       if (usuariosRegistrados.find(u => u.email === email)) {
-         mostrarToast('❌ Este email ya está registrado. Inicia sesión.');
+         mostrarToast('❌ Email ya registrado');
          return;
       }
       
@@ -1429,7 +1379,6 @@
          contadorCompras: 0,
          fechaRegistro: new Date().toISOString()
       };
-      
       usuariosRegistrados.push(nuevoUsuario);
       localStorage.setItem('cremitaUsuarios', JSON.stringify(usuariosRegistrados));
       
@@ -1445,12 +1394,8 @@
       const modalElement = document.getElementById('authModal');
       const modal = bootstrap.Modal.getInstance(modalElement);
       if (modal) modal.hide();
-      
-      mostrarToast(`🎉 ¡Bienvenido ${nombre}! En tu SEGUNDA compra tienes 10% DESCUENTO ✨`);
-      
-      setTimeout(() => {
-         location.reload();
-      }, 1500);
+      mostrarToast(`🎉 ¡Bienvenido ${nombre}! 10% OFF en 2da compra ✨`);
+      setTimeout(() => location.reload(), 1500);
    }
    
    function iniciarSesion() {
@@ -1458,13 +1403,12 @@
       const password = document.getElementById('loginPassword')?.value;
       
       if (!email || !password) {
-         mostrarToast('❌ Por favor ingresa email y contraseña');
+         mostrarToast('❌ Ingresa email y contraseña');
          return;
       }
       
       const usuariosRegistrados = JSON.parse(localStorage.getItem('cremitaUsuarios') || '[]');
       const usuario = usuariosRegistrados.find(u => u.email === email && u.password === password);
-      
       if (!usuario) {
          mostrarToast('❌ Email o contraseña incorrectos');
          return;
@@ -1482,42 +1426,30 @@
       const modalElement = document.getElementById('authModal');
       const modal = bootstrap.Modal.getInstance(modalElement);
       if (modal) modal.hide();
-      
-      if (usuario.contadorCompras >= 1) {
-         mostrarToast(`🎉 ¡Bienvenido de vuelta ${usuario.nombre}! Recuerda que tienes 10% OFF en tu próxima compra ✨`);
-      } else {
-         mostrarToast(`🎉 ¡Bienvenido ${usuario.nombre}! En tu SEGUNDA compra tienes 10% DESCUENTO ✨`);
-      }
-      
-      setTimeout(() => {
-         location.reload();
-      }, 1500);
+      mostrarToast(`🎉 ¡Bienvenido ${usuario.nombre}!`);
+      setTimeout(() => location.reload(), 1500);
    }
    
    function cerrarSesion() {
       localStorage.removeItem('cremitaUsuario');
       usuarioActual = null;
       actualizarUIUsuario();
-      mostrarToast('🔓 Has cerrado sesión correctamente');
-      setTimeout(() => {
-         location.reload();
-      }, 1000);
+      mostrarToast('🔓 Sesión cerrada');
+      setTimeout(() => location.reload(), 1000);
    }
    
    function verMisPedidos() {
-      mostrarToast('📦 Próximamente podrás ver tu historial de pedidos');
+      mostrarToast('📦 Próximamente disponible');
    }
    
    function mostrarToast(mensaje) {
       const toast = document.getElementById('toastMsg');
       toast.textContent = mensaje;
       toast.style.display = 'block';
-      setTimeout(() => {
-         toast.style.display = 'none';
-      }, 3000);
+      setTimeout(() => toast.style.display = 'none', 2500);
    }
    
-   // Tabs en modal de autenticación
+   // Tabs en modal
    document.querySelectorAll('.auth-tab').forEach(tab => {
       tab.addEventListener('click', function() {
          document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
@@ -1535,9 +1467,7 @@
       e.stopPropagation();
       userDropdown.classList.toggle('show');
    });
-   document.addEventListener('click', () => {
-      userDropdown.classList.remove('show');
-   });
+   document.addEventListener('click', () => userDropdown.classList.remove('show'));
    userDropdown.addEventListener('click', (e) => e.stopPropagation());
 
    // ===== FUNCIONES DEL CARRITO =====
@@ -1572,13 +1502,20 @@
       const carrito = obtenerCarrito();
       const totalItems = carrito.reduce((sum, item) => sum + item.cantidad, 0);
       const cartBadge = document.getElementById('cartCountBadge');
-      if (cartBadge) cartBadge.innerText = totalItems;
+      if (cartBadge) {
+         if (totalItems > 0) {
+            cartBadge.innerText = totalItems;
+            cartBadge.classList.remove('hidden');
+         } else {
+            cartBadge.classList.add('hidden');
+         }
+      }
       
       const container = document.getElementById('cartItemsList');
       if (!container) return;
       
       if (carrito.length === 0) {
-         container.innerHTML = '<div class="text-center py-4">🛒 Tu carrito está vacío</div>';
+         container.innerHTML = '<div class="text-center py-3">🛒 Tu carrito está vacío</div>';
          document.getElementById('cartTotal').innerHTML = '';
          document.getElementById('shippingInfo').style.display = 'none';
          document.getElementById('cartDiscountInfo').style.display = 'none';
@@ -1608,21 +1545,15 @@
             </div>
          `;
       });
-      
       container.innerHTML = html;
       
       const usuario = obtenerUsuario();
       let descuentoAplicado = false;
-      let descuentoPorcentaje = 0;
+      let totalConDescuento = total;
       
       if (usuario && usuario.contadorCompras >= 1) {
          descuentoAplicado = true;
-         descuentoPorcentaje = 10;
-      }
-      
-      let totalConDescuento = total;
-      if (descuentoAplicado) {
-         totalConDescuento = total * (1 - descuentoPorcentaje / 100);
+         totalConDescuento = total * 0.9;
       }
       
       const falta = ENVIO_GRATIS_MINIMO - totalConDescuento;
@@ -1632,25 +1563,21 @@
       if (totalConDescuento >= ENVIO_GRATIS_MINIMO) {
          shippingText = '🎉 ¡ENVÍO GRATIS! 🎉';
       } else {
-         shippingText = `💸 Faltan $${falta.toLocaleString()} para obtener ENVÍO GRATIS`;
+         shippingText = `💸 Faltan $${falta.toLocaleString()} para envío GRATIS`;
       }
       
-      const shippingProgress = document.getElementById('shippingProgress');
-      const shippingTextEl = document.getElementById('shippingText');
-      const cartTotalEl = document.getElementById('cartTotal');
+      document.getElementById('shippingProgress').style.width = progressPercent + '%';
+      document.getElementById('shippingText').innerHTML = shippingText;
+      
       const discountInfoEl = document.getElementById('cartDiscountInfo');
-      
-      if (shippingProgress) shippingProgress.style.width = progressPercent + '%';
-      if (shippingTextEl) shippingTextEl.innerHTML = shippingText;
-      
       if (descuentoAplicado) {
          discountInfoEl.style.display = 'block';
-         discountInfoEl.innerHTML = `<i class="fa fa-star"></i> 🎉 ¡Por ser tu SEGUNDA compra! 10% DESCUENTO aplicado automáticamente 🎉<br>
-         <small>Total original: $${total.toLocaleString()} | Descuento: -$${(total * 0.1).toLocaleString()}</small>`;
-         if (cartTotalEl) cartTotalEl.innerHTML = `Total con descuento: $${totalConDescuento.toLocaleString()}`;
+         discountInfoEl.innerHTML = `<i class="fa fa-star"></i> 🎉 10% DESCUENTO (2da compra) aplicado 🎉<br>
+         <small>Original: $${total.toLocaleString()} → Con descuento: $${totalConDescuento.toLocaleString()}</small>`;
+         document.getElementById('cartTotal').innerHTML = `Total: $${totalConDescuento.toLocaleString()}`;
       } else {
          discountInfoEl.style.display = 'none';
-         if (cartTotalEl) cartTotalEl.innerHTML = `Total: $${total.toLocaleString()}`;
+         document.getElementById('cartTotal').innerHTML = `Total: $${total.toLocaleString()}`;
       }
    }
    
@@ -1674,7 +1601,7 @@
    document.getElementById('checkoutBtn')?.addEventListener('click', function() {
       const carrito = obtenerCarrito();
       if (carrito.length === 0) {
-         mostrarToast('🛒 Tu carrito está vacío. Agrega algunos productos primero.');
+         mostrarToast('🛒 Carrito vacío');
          return;
       }
       
@@ -1703,7 +1630,7 @@
       if (usuario) mensaje += `👤 *Cliente:* ${usuario.nombre}\n📧 ${usuario.email}\n\n`;
       mensaje += `📦 *PRODUCTOS:*\n${productosLista}\n`;
       mensaje += `💰 *SUBTOTAL:* $${total.toLocaleString()}\n`;
-      if (descuentoAplicado) mensaje += `🎁 *DESCUENTO 10% 2DA COMPRA:* -$${(total * 0.1).toLocaleString()}\n`;
+      if (descuentoAplicado) mensaje += `🎁 *DESCUENTO 10%:* -$${(total * 0.1).toLocaleString()}\n`;
       mensaje += `🚚 *ENVÍO:* ${envioGratis ? 'GRATIS 🎉' : 'Pago contra entrega (+$10.000)'}\n`;
       let totalFinal = totalConDescuento;
       if (!envioGratis) totalFinal += 10000;
@@ -1738,7 +1665,7 @@
    }
    
    function enviarWhatsAppGeneral() {
-      window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent('Hola, estoy interesado en los productos de Cremita Joyería. Quiero más información.')}`, '_blank');
+      window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent('Hola, quiero información de Cremita Joyería')}`, '_blank');
       return false;
    }
    
